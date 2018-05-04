@@ -1,0 +1,100 @@
+@import "variables";
+@import "mixin";
+@import "layers";
+
+body {
+  @include transformIsometric;
+  background-color: #000;
+}
+
+
+/*----------------
+  component
+*/
+
+.area {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+  //max-width: $squareSize * 2;
+}
+
+.block {
+  //z-index: layer-get("base");
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  max-width: $squareSize * 2;
+
+  @for $i from 1 through 10 {
+    &.wide#{$i} {
+      max-width: $squareSize * $i;
+    }
+  }
+}
+
+
+.square {
+  @include defaultGroundBase();
+}
+
+.street {
+  position: relative;
+  top: $squareDepth;
+  left: -$squareDepth;
+  z-index: layer-get("street");
+  flex-shrink: 0;
+  width: $streetWidth;
+
+  background-image:
+    linear-gradient(to  bottom, $streetBaseColor, $streetBaseColor 20px, transparent 20px, transparent 80px, $streetBaseColor 80px, $streetBaseColor),
+    linear-gradient(to right, $streetBaseColor, $streetBaseColor 48%, $streetLineColor 48%, $streetLineColor 52%, $streetBaseColor 52%, $streetBaseColor);
+  background-size: 100px 100px, 100px 100px;
+  background-repeat: repeat-y;
+}
+
+
+.avenue {
+  position: relative;
+  z-index: layer-get("street");
+  width: 100%;
+  height: 100px;
+  margin-top: 10px;
+
+  background-image:
+    linear-gradient(to right, $streetBaseColor, $streetBaseColor 20px, transparent 20px, transparent 80px, $streetBaseColor 80px, $streetBaseColor),
+    linear-gradient(to bottom, $streetBaseColor, $streetBaseColor 48%, $streetLineColor 48%, $streetLineColor 52%, $streetBaseColor 52%, $streetBaseColor);
+  background-size: 100px 100px, 100px 100px;
+  background-repeat: repeat-x;
+
+  + .area {
+    margin-top: -10px;
+  }
+
+}
+
+/*-------------------------
+  building
+ */
+
+.bill1 {
+  @include standardBillBase();
+}
+
+.bill2 {
+  @include standardBillBase(100px);
+}
+
+
+
+
+
+
+
+
+
+
+
+

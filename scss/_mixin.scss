@@ -1,0 +1,72 @@
+@mixin transformIsometric {
+  transform: rotate(-30deg)
+  skew(30deg)
+  scale(0.8165, 0.7071);
+}
+
+@mixin defaultGroundBase($groundColor: $grassColor) {
+  position: relative;
+  flex-shrink: 0;
+
+  width: $squareSize;
+  height: $squareSize;
+  background-color: $groundColor;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: layer-get("ground" "depth");
+    top: $squareDepth * 0.5;
+    left: -$squareDepth;
+    width: $squareDepth;
+    height: $squareSize;
+    background-color: darken($groundColor, 10%);
+    transform: skewY(-45deg);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: layer-get("ground" "depth");
+    bottom: -$squareDepth;
+    right: $squareDepth * 0.5;
+    width: $squareSize;
+    height: $squareDepth;
+    background-color: darken($groundColor, 15%);
+    transform: skewX(-45deg);
+  }
+}
+
+@mixin standardBillBase($billHeight: 200px, $billColor: #DDDBDC) {
+  position: absolute;
+  z-index: layer-get("building" "base");
+  bottom: 0;
+  left: $billHeight * 0.5;
+  width: 100px;
+  height: $billHeight;
+  transform: rotate(45deg) skewY(-45deg) scale(0.7, 1);
+  background-color: darken($billColor, 20%);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -115px;
+    right: 45px;
+    transform: skewX(35deg) scale(1, 1.3);
+
+    width: 100px;
+    height: 100px;
+    background-color: lighten($billColor, 20%);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: -100px;
+    top: -130px;
+    width: 100px;
+    height: $billHeight;
+    transform: skewY(55deg) translate(5px, 57px) scaleX(0.9);
+    background-color: $billColor;
+  }
+}

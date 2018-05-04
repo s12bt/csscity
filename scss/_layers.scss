@@ -1,0 +1,34 @@
+// cf. https://qiita.com/hbsnow/items/8df6bc78ba7dad4d21fa
+
+$layers: (
+  base: 0,
+  street: -2,
+  ground: (
+    depth: -1
+  ),
+  building: (
+    base: 200,
+    window: 210
+  )
+);
+
+@function map-deep-get($map, $keys) {
+  $value: $map;
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+
+  @return $value;
+}
+
+@function layer-get($keys) {
+  @if not variable-exists(layers) {
+    @error "`$layers` is not defined.";
+  }
+
+  @if not function-exists(map-deep-get) {
+    @error "`map-deep-get()` is not available.";
+  }
+
+  @return map-deep-get($layers, $keys);
+}
