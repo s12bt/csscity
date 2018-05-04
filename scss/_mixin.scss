@@ -1,12 +1,14 @@
 @mixin transformIsometric {
   transform: rotate(-30deg)
   skew(30deg)
-  scale(0.8165, 0.7071);
+  scale(0.8165, 0.7071)
+  translate(100px, 100px);
 }
 
 @mixin defaultGroundBase($groundColor: $grassColor) {
   position: relative;
   flex-shrink: 0;
+  z-index: layer-get("ground" "flat");
 
   width: $squareSize;
   height: $squareSize;

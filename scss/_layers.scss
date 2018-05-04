@@ -2,9 +2,10 @@
 
 $layers: (
   base: 0,
-  street: -2,
+  street: 0,
   ground: (
-    depth: -1
+    depth: 100,
+    flat: 150
   ),
   building: (
     base: 200,
