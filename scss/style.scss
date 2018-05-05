@@ -71,6 +71,10 @@
     margin-top: -10px;
   }
 
+  + .avenue {
+    margin-top: 0;
+  }
+
 }
 
 /*-------------------------
@@ -130,11 +134,11 @@
     $billLightColor: lighten($billStandardColor, 8%);
 
     background-image:
-    linear-gradient(to bottom,
-      transparent,
-      transparent 90%,
-      $billDarkColor 90%,
-      $billDarkColor
+    linear-gradient(to top,
+      $billDarkColor,
+      $billDarkColor 40px,
+      transparent 40px,
+      transparent
     ),
     linear-gradient(to right,
       $billDarkColor,
@@ -159,11 +163,11 @@
 
     &:after {
       background-image:
-      linear-gradient(to bottom,
-        transparent,
-        transparent 90%,
-        $billColor 90%,
-        $billColor
+      linear-gradient(to top,
+        $billColor,
+        $billColor 40px,
+        transparent 40px,
+        transparent
       ),
       linear-gradient(to right,
         $billColor,
@@ -257,6 +261,114 @@
   }
 }
 
+/*-------------------------
+  tree
+ */
+
+.tree {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  //transform: skewX(-45deg) translate(20px, -60px);
+  z-index: layer-get("tree" "base");
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: layer-get("tree" "trunk");
+    width: 10px;
+    height: 30px;
+    background-image: linear-gradient(to right top, #8D7A5A, #8D7A5A 10%, #9B8963);
+    left: 21px;
+    bottom: 10px;
+    border-radius: 0 0 4px 8px;
+    transform: skewX(-45deg);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: layer-get("tree" "leaves");
+    transform: skewX(-45deg);
+  }
+
+  &.slender {
+    &:after {
+      bottom: 30px;
+      left: 50px;
+      width: 35px;
+      height: 70px;
+      border-radius: 100% 100% 80% 80%;
+      background-image:
+        linear-gradient(to left top, #699C6F, #699C6F 20%, transparent, transparent 90%, #478146),
+        linear-gradient(to top, #699C6F, #A1BB7B);
+      box-shadow: 1px 1px 1px 0 #478146;
+    }
+  }
+
+  &.thick {
+    &:after {
+      bottom: 12px;
+      left: 20px;
+      width: 56px;
+      height: 65px;
+      background: linear-gradient(to top, #98A84A, #8A9843);
+      transform: rotateZ(-130deg);
+      border-radius: 80% 100% / 64% 100%;
+
+
+      /*
+      box-shadow: 25px 25px 0 3px saturate(#226143, 80%),
+      23px -10px 0 11px saturate(#226143, 99%);
+      */
+    }
+  }
+  /*
+
+  &:after {
+    content: "";
+    position: absolute;
+    z-index: layer-get("tree" "leaves");
+    bottom: -30px;
+    left: -10px;
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    background: saturate(#226143, 30%);
+
+    transform: skewX(8deg);
+    box-shadow:
+      25px 25px 0 3px saturate(#226143, 80%),
+      23px -10px 0 11px saturate(#226143, 99%);
+  }
+
+  &:nth-of-type(1) {
+    &:after {
+      box-shadow:
+        random(30) + px 25px 0 3px saturate(#226143, 80%),
+        random(30) + px -10px 0 11px saturate(#226143, 99%);
+    }
+  }
+
+  &:nth-of-type(2) {
+    &:after {
+      box-shadow:
+        random(30) + px 25px 0 3px saturate(#226143, 80%),
+        random(30) + px -10px 0 11px saturate(#226143, 99%);
+    }
+  }
+
+  &:nth-of-type(3) {
+    &:after {
+      box-shadow:
+        random(30) + px 25px 0 3px saturate(#226143, 80%),
+        random(30) + px -10px 0 11px saturate(#226143, 99%);
+    }
+  }
+  */
+
+
+}
 
 
 
