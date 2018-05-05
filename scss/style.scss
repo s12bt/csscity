@@ -2,8 +2,14 @@
 @import "mixin";
 @import "layers";
 
+* {
+  box-sizing: border-box;
+
+}
+
 .city {
   @include transformIsometric;
+  display: inline-block;
   z-index: layer-get("base");
   margin-top: 200px;
 }
@@ -38,6 +44,9 @@
   @include defaultGroundBase();
 }
 
+/*-------------------------
+  road
+ */
 .street {
   position: relative;
   top: $squareDepth;
@@ -47,25 +56,51 @@
   width: $streetWidth;
 
   background-image:
-    linear-gradient(to  bottom, $streetBaseColor, $streetBaseColor 20px, transparent 20px, transparent 80px, $streetBaseColor 80px, $streetBaseColor),
-    linear-gradient(to right, $streetBaseColor, $streetBaseColor 48%, $streetLineColor 48%, $streetLineColor 52%, $streetBaseColor 52%, $streetBaseColor);
+  linear-gradient(to  bottom,
+    $streetBaseColor,
+    $streetBaseColor 20px,
+    transparent 20px,
+    transparent 80px,
+    $streetBaseColor 80px,
+    $streetBaseColor
+  ),
+  linear-gradient(to right,
+    $streetBaseColor,
+    $streetBaseColor 48%,
+    $streetLineColor 48%,
+    $streetLineColor 52%,
+    $streetBaseColor 52%,
+    $streetBaseColor
+  );
   background-size: 100px 100px, 100px 100px;
   background-repeat: repeat-y;
 }
 
 .avenue {
   position: relative;
+  padding: 5px 0;
   right: $squareDepth;
-  z-index: layer-get("street");
   width: 100%;
   height: 100px;
   margin-top: 10px;
 
   background-image:
-    linear-gradient(to right, $streetBaseColor, $streetBaseColor 20px, transparent 20px, transparent 80px, $streetBaseColor 80px, $streetBaseColor),
-    linear-gradient(to bottom, $streetBaseColor, $streetBaseColor 48%, $streetLineColor 48%, $streetLineColor 52%, $streetBaseColor 52%, $streetBaseColor);
-  background-size: 100px 100px, 100px 100px;
-  background-repeat: repeat-x;
+  linear-gradient(to bottom,
+    $streetBaseColor,
+    $streetBaseColor 48%,
+    transparent 48%,
+    transparent 52%,
+    $streetBaseColor 52%,
+    $streetBaseColor
+  ),
+  repeating-linear-gradient(to right,
+    $streetLineColor,
+    $streetLineColor 40px,
+    $streetBaseColor 40px,
+    $streetBaseColor 80px,
+    $streetLineColor 80px,
+    $streetLineColor 100px
+  );
 
   + .area {
     margin-top: -10px;
@@ -74,8 +109,129 @@
   + .avenue {
     margin-top: 0;
   }
-
 }
+
+/*-------------------------
+  car
+ */
+.car {
+  $tireColor: #3C4953;
+  $windowColor: #8CC2EB;
+  $carRedColor: #E30C0C;
+  $carBlueColor: #1B53B4;
+  $carGreenColor: #3CC1A9;
+
+  @mixin onAvenueCarColorBase($color){
+    $darkColor: darken($color, 8%);
+    background-image: radial-gradient(ellipse farthest-corner, $color, $darkColor);
+    box-shadow: -3px 5px 0 2px $darkColor;
+
+    &:before {
+      background-color: $color;
+    }
+  }
+
+  position: absolute;
+  z-index: layer-get("car");
+  width: 55px;
+  height: 30px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    border-radius: 6px;
+    width: 24px;
+    height: 25px;
+  }
+
+  &:after {
+    content: "";
+    position:absolute;
+    left: 3px;
+    bottom: -13px;
+    width: 12px;
+    height: 12px;
+    background-color: $tireColor;
+    border-radius: 50%;
+    transform: skew(-30deg);
+    box-shadow: 28px 0 0 0 $tireColor;
+  }
+
+  &.toRight {
+    right: 0;
+    top: 0;
+    border-radius: 10px 16px 4px 8px;
+
+    &:before {
+      right: 3px;
+      box-shadow: -6px 4px 0 2px $windowColor;
+    }
+  }
+
+  &.toLeft {
+    left: 0;
+    bottom: 25px;
+    border-radius:16px 10px 8px 4px;
+
+    &:before {
+      right: 9px;
+      box-shadow: -3px 5px 0 2px $windowColor;
+    }
+  }
+
+  /* color */
+  &.red {
+    @include onAvenueCarColorBase($carRedColor);
+  }
+
+  &.blue {
+    @include onAvenueCarColorBase($carBlueColor);
+  }
+
+  &.green {
+    @include onAvenueCarColorBase($carGreenColor);
+  }
+
+
+
+  /* animation */
+  &.run {
+    animation-duration: 15s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &.run.toRight {
+    animation-name: onAvenueToRight;
+  }
+
+  &.run.toLeft {
+    animation-name: onAvenueToLeft;
+  }
+
+  @keyframes onAvenueToRight {
+    from {
+      right: 0%;
+    }
+
+    to {
+      right: 100%;
+    }
+  }
+
+  @keyframes onAvenueToLeft {
+    from {
+      left: 0%;
+    }
+
+    to {
+      left: 100%;
+    }
+  }
+}
+
 
 /*-------------------------
   building
@@ -269,7 +425,6 @@
   position: relative;
   width: 50px;
   height: 50px;
-  //transform: skewX(-45deg) translate(20px, -60px);
   z-index: layer-get("tree" "base");
 
   &:before {
@@ -300,9 +455,9 @@
       height: 70px;
       border-radius: 100% 100% 80% 80%;
       background-image:
-        linear-gradient(to left top, #699C6F, #699C6F 20%, transparent, transparent 90%, #478146),
-        linear-gradient(to top, #699C6F, #A1BB7B);
+        radial-gradient(ellipse farthest-corner, #699C6F, #699C6F 20%, #478146);
       box-shadow: 1px 1px 1px 0 #478146;
+
     }
   }
 
@@ -315,59 +470,8 @@
       background: linear-gradient(to top, #98A84A, #8A9843);
       transform: rotateZ(-130deg);
       border-radius: 80% 100% / 64% 100%;
-
-
-      /*
-      box-shadow: 25px 25px 0 3px saturate(#226143, 80%),
-      23px -10px 0 11px saturate(#226143, 99%);
-      */
     }
   }
-  /*
-
-  &:after {
-    content: "";
-    position: absolute;
-    z-index: layer-get("tree" "leaves");
-    bottom: -30px;
-    left: -10px;
-    width: 50px;
-    height: 40px;
-    border-radius: 50%;
-    background: saturate(#226143, 30%);
-
-    transform: skewX(8deg);
-    box-shadow:
-      25px 25px 0 3px saturate(#226143, 80%),
-      23px -10px 0 11px saturate(#226143, 99%);
-  }
-
-  &:nth-of-type(1) {
-    &:after {
-      box-shadow:
-        random(30) + px 25px 0 3px saturate(#226143, 80%),
-        random(30) + px -10px 0 11px saturate(#226143, 99%);
-    }
-  }
-
-  &:nth-of-type(2) {
-    &:after {
-      box-shadow:
-        random(30) + px 25px 0 3px saturate(#226143, 80%),
-        random(30) + px -10px 0 11px saturate(#226143, 99%);
-    }
-  }
-
-  &:nth-of-type(3) {
-    &:after {
-      box-shadow:
-        random(30) + px 25px 0 3px saturate(#226143, 80%),
-        random(30) + px -10px 0 11px saturate(#226143, 99%);
-    }
-  }
-  */
-
-
 }
 
 

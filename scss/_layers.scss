@@ -15,7 +15,8 @@ $layers: (
     base: 300,
     leaves: 2,
     trunk: 1
-  )
+  ),
+  car: 500
 );
 
 @function map-deep-get($map, $keys) {

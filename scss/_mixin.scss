@@ -38,37 +38,3 @@
     transform: skewX(-45deg);
   }
 }
-
-@mixin standardBillBase($billHeight: 200px, $billColor: #DDDBDC) {
-  position: absolute;
-  z-index: layer-get("building" "base");
-  bottom: 0;
-  left: $billHeight * 0.5;
-  width: 100px;
-  height: $billHeight;
-  transform: rotate(45deg) skewY(-45deg) scale(0.7, 1);
-  background-color: darken($billColor, 20%);
-
-  &:before {
-    content: "";
-    position: absolute;
-    top: -115px;
-    right: 45px;
-    transform: skewX(35deg) scale(1, 1.3);
-
-    width: 100px;
-    height: 100px;
-    background-color: lighten($billColor, 20%);
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    left: -100px;
-    top: -130px;
-    width: 100px;
-    height: $billHeight;
-    transform: skewY(55deg) translate(5px, 57px) scaleX(0.9);
-    background-color: $billColor;
-  }
-}
