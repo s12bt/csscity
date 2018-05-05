@@ -229,18 +229,18 @@
     border-radius: 50%;
     transform: skew(-30deg);
     box-shadow: 28px 0 0 0 #3C4953; }
-  .car.toRight {
+  .car.toWest {
     right: 0;
     top: 0;
     border-radius: 10px 16px 4px 8px; }
-    .car.toRight:before {
+    .car.toWest:before {
       right: 3px;
       box-shadow: -6px 4px 0 2px #8CC2EB; }
-  .car.toLeft {
+  .car.toEast {
     left: 0;
     bottom: 25px;
     border-radius: 16px 10px 8px 4px; }
-    .car.toLeft:before {
+    .car.toEast:before {
       right: 9px;
       box-shadow: -3px 5px 0 2px #8CC2EB; }
   .car.red {
@@ -263,9 +263,9 @@
     animation-direction: normal;
     animation-iteration-count: infinite;
     animation-timing-function: linear; }
-  .car.run.toRight {
+  .car.run.toWest {
     animation-name: onAvenueToRight; }
-  .car.run.toLeft {
+  .car.run.toEast {
     animation-name: onAvenueToLeft; }
 @keyframes onAvenueToRight {
   from {
@@ -277,13 +277,322 @@
     left: 0%; }
   to {
     left: 100%; } }
+.avenue:nth-of-type(1) .car.run:nth-of-type(1) {
+  animation-duration: 22s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(1) .car.run:nth-of-type(2) {
+  animation-duration: 24s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(1) .car.run:nth-of-type(3) {
+  animation-duration: 24s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(1) .car.run:nth-of-type(4) {
+  animation-duration: 10s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(1) .car.run:nth-of-type(5) {
+  animation-duration: 12s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(1) .car.run:nth-of-type(6) {
+  animation-duration: 26s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(1) .car.run:nth-of-type(7) {
+  animation-duration: 22s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(1) .car.run:nth-of-type(8) {
+  animation-duration: 22s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(1) .car.run:nth-of-type(9) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(1) .car.run:nth-of-type(10) {
+  animation-duration: 18s;
+  animation-delay: 2s; }
+
+.avenue:nth-of-type(2) .car.run:nth-of-type(1) {
+  animation-duration: 28s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(2) {
+  animation-duration: 14s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(3) {
+  animation-duration: 14s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(4) {
+  animation-duration: 22s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(5) {
+  animation-duration: 22s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(6) {
+  animation-duration: 20s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(7) {
+  animation-duration: 20s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(8) {
+  animation-duration: 22s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(9) {
+  animation-duration: 16s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(10) {
+  animation-duration: 16s;
+  animation-delay: 1s; }
+
+.avenue:nth-of-type(3) .car.run:nth-of-type(1) {
+  animation-duration: 22s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(2) {
+  animation-duration: 16s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(3) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(4) {
+  animation-duration: 18s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(5) {
+  animation-duration: 16s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(6) {
+  animation-duration: 26s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(7) {
+  animation-duration: 14s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(8) {
+  animation-duration: 20s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(9) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(10) {
+  animation-duration: 14s;
+  animation-delay: 1s; }
+
+.avenue:nth-of-type(4) .car.run:nth-of-type(1) {
+  animation-duration: 20s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(2) {
+  animation-duration: 22s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(3) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(4) {
+  animation-duration: 24s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(5) {
+  animation-duration: 20s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(6) {
+  animation-duration: 10s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(7) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(8) {
+  animation-duration: 28s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(9) {
+  animation-duration: 26s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(10) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+
+.avenue:nth-of-type(5) .car.run:nth-of-type(1) {
+  animation-duration: 26s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(2) {
+  animation-duration: 24s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(3) {
+  animation-duration: 24s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(4) {
+  animation-duration: 28s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(5) {
+  animation-duration: 12s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(6) {
+  animation-duration: 26s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(7) {
+  animation-duration: 20s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(8) {
+  animation-duration: 14s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(9) {
+  animation-duration: 18s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(10) {
+  animation-duration: 16s;
+  animation-delay: 2s; }
+
+.avenue:nth-of-type(6) .car.run:nth-of-type(1) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(2) {
+  animation-duration: 22s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(3) {
+  animation-duration: 28s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(4) {
+  animation-duration: 18s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(5) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(6) {
+  animation-duration: 28s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(7) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(8) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(9) {
+  animation-duration: 24s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(10) {
+  animation-duration: 10s;
+  animation-delay: 1s; }
+
+.avenue:nth-of-type(7) .car.run:nth-of-type(1) {
+  animation-duration: 10s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(2) {
+  animation-duration: 28s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(3) {
+  animation-duration: 24s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(4) {
+  animation-duration: 26s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(5) {
+  animation-duration: 20s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(6) {
+  animation-duration: 22s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(7) {
+  animation-duration: 20s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(8) {
+  animation-duration: 26s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(9) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(10) {
+  animation-duration: 28s;
+  animation-delay: 2s; }
+
+.avenue:nth-of-type(8) .car.run:nth-of-type(1) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(2) {
+  animation-duration: 18s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(3) {
+  animation-duration: 10s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(4) {
+  animation-duration: 16s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(5) {
+  animation-duration: 28s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(6) {
+  animation-duration: 26s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(7) {
+  animation-duration: 26s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(8) {
+  animation-duration: 12s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(9) {
+  animation-duration: 28s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(10) {
+  animation-duration: 26s;
+  animation-delay: 3s; }
+
+.avenue:nth-of-type(9) .car.run:nth-of-type(1) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(2) {
+  animation-duration: 22s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(3) {
+  animation-duration: 10s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(4) {
+  animation-duration: 28s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(5) {
+  animation-duration: 10s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(6) {
+  animation-duration: 20s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(7) {
+  animation-duration: 10s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(8) {
+  animation-duration: 18s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(9) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(10) {
+  animation-duration: 26s;
+  animation-delay: 3s; }
+
+.avenue:nth-of-type(10) .car.run:nth-of-type(1) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(2) {
+  animation-duration: 10s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(3) {
+  animation-duration: 14s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(4) {
+  animation-duration: 24s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(5) {
+  animation-duration: 26s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(6) {
+  animation-duration: 20s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(7) {
+  animation-duration: 26s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(8) {
+  animation-duration: 24s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(9) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(10) {
+  animation-duration: 28s;
+  animation-delay: 2s; }
+
 * {
   box-sizing: border-box; }
 
 .city {
   transform: rotate(-30deg) skew(30deg) scale(0.8165, 0.7071) translate(100px, 100px);
   display: inline-block;
-  z-index: 0;
-  margin-top: 200px; }
+  z-index: 0; }
 
 /*# sourceMappingURL=style.css.map */

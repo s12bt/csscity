@@ -45,7 +45,7 @@
     box-shadow: 28px 0 0 0 $tireColor;
   }
 
-  &.toRight {
+  &.toWest {
     right: 0;
     top: 0;
     border-radius: 10px 16px 4px 8px;
@@ -56,7 +56,7 @@
     }
   }
 
-  &.toLeft {
+  &.toEast {
     left: 0;
     bottom: 25px;
     border-radius:16px 10px 8px 4px;
@@ -89,11 +89,11 @@
     animation-timing-function: linear;
   }
 
-  &.run.toRight {
+  &.run.toWest {
     animation-name: onAvenueToRight;
   }
 
-  &.run.toLeft {
+  &.run.toEast {
     animation-name: onAvenueToLeft;
   }
 
@@ -114,6 +114,17 @@
 
     to {
       left: 100%;
+    }
+  }
+}
+
+@for $avenue from 1 through 10 {
+  .avenue:nth-of-type(#{$avenue}) {
+    @for $car from 1 through 10 {
+      .car.run:nth-of-type(#{$car}) {
+        animation-duration: 30 - random(10)*2 + s;
+        animation-delay: random(3) + s;
+      }
     }
   }
 }
