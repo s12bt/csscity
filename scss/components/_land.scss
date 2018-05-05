@@ -1,0 +1,28 @@
+/*----------------
+  land
+*/
+
+.area {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row-reverse;
+}
+
+.block {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  max-width: $squareSize * 2;
+
+  @for $i from 1 through 10 {
+    &.wide#{$i} {
+      max-width: $squareSize * $i;
+    }
+  }
+}
+
+.address {
+  @include defaultGroundBase();
+}

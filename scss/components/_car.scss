@@ -1,0 +1,119 @@
+/*-------------------------
+  car
+ */
+.car {
+  $tireColor: #3C4953;
+  $windowColor: #8CC2EB;
+  $carRedColor: #E30C0C;
+  $carBlueColor: #1B53B4;
+  $carGreenColor: #3CC1A9;
+
+  @mixin onAvenueCarColorBase($color){
+    $darkColor: darken($color, 8%);
+    background-image: radial-gradient(ellipse farthest-corner, $color, $darkColor);
+    box-shadow: -3px 5px 0 2px $darkColor;
+
+    &:before {
+      background-color: $color;
+    }
+  }
+
+  position: absolute;
+  z-index: layer-get("car");
+  width: 55px;
+  height: 30px;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    border-radius: 6px;
+    width: 24px;
+    height: 25px;
+  }
+
+  &:after {
+    content: "";
+    position:absolute;
+    left: 3px;
+    bottom: -13px;
+    width: 12px;
+    height: 12px;
+    background-color: $tireColor;
+    border-radius: 50%;
+    transform: skew(-30deg);
+    box-shadow: 28px 0 0 0 $tireColor;
+  }
+
+  &.toRight {
+    right: 0;
+    top: 0;
+    border-radius: 10px 16px 4px 8px;
+
+    &:before {
+      right: 3px;
+      box-shadow: -6px 4px 0 2px $windowColor;
+    }
+  }
+
+  &.toLeft {
+    left: 0;
+    bottom: 25px;
+    border-radius:16px 10px 8px 4px;
+
+    &:before {
+      right: 9px;
+      box-shadow: -3px 5px 0 2px $windowColor;
+    }
+  }
+
+  /* color */
+  // @ToDo create color array, and compile each color style automatic.
+  &.red {
+    @include onAvenueCarColorBase($carRedColor);
+  }
+
+  &.blue {
+    @include onAvenueCarColorBase($carBlueColor);
+  }
+
+  &.green {
+    @include onAvenueCarColorBase($carGreenColor);
+  }
+
+  /* animation */
+  &.run {
+    animation-duration: 15s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+
+  &.run.toRight {
+    animation-name: onAvenueToRight;
+  }
+
+  &.run.toLeft {
+    animation-name: onAvenueToLeft;
+  }
+
+  @keyframes onAvenueToRight {
+    from {
+      right: 0%;
+    }
+
+    to {
+      right: 100%;
+    }
+  }
+
+  @keyframes onAvenueToLeft {
+    from {
+      left: 0%;
+    }
+
+    to {
+      left: 100%;
+    }
+  }
+}

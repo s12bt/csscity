@@ -1,0 +1,183 @@
+/*-------------------------
+  building
+ */
+
+.bill {
+  position: absolute;
+  z-index: layer-get("building" "base");
+  bottom: 0;
+  left: 100px * 0.5;
+  width: 100px;
+  height: 100px;
+  transform: rotate(45deg) skewY(-45deg) scale(0.7, 1);
+  background-color: darken($billStandardColor, 20%);
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: -115px;
+    right: 45px;
+    transform: skewX(35deg) scale(1, 1.3);
+
+    width: 100px;
+    height: 100px;
+    background-color: lighten($billStandardColor, 8%);
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: -100px;
+    top: -130px;
+    width: 100px;
+    height: 100px;
+    transform: skewY(55deg) translate(5px, 57px) scaleX(0.9);
+    background-color: $billStandardColor;
+  }
+
+  /* building height */
+  @for $i from 1 through 4 {
+    $num: $i * 100;
+    &.height#{$num} {
+      left: #{$num * 0.5}px;
+      height: #{$num}px;
+      &:after {
+        height: #{$num}px;
+      }
+    }
+  }
+
+  /* building color */
+  // @ToDo refactor
+  &.colorWhite {
+    $billColor: $billStandardColor;
+    $billDarkColor: darken($billStandardColor, 20%);
+    $billLightColor: lighten($billStandardColor, 8%);
+
+    background-image:
+      linear-gradient(to top,
+        $billDarkColor,
+        $billDarkColor 40px,
+        transparent 40px,
+        transparent
+      ),
+      linear-gradient(to right,
+        $billDarkColor,
+        $billDarkColor 10%,
+        transparent 10%,
+        transparent 90%,
+        $billDarkColor 90%,
+        $billDarkColor
+      ),
+      repeating-linear-gradient(to bottom,
+        $billDarkColor,
+        $billDarkColor 20px,
+        $billWindowColor 20px,
+        $billWindowColor 50px,
+        $billDarkColor 50px,
+        $billDarkColor 70px
+      );
+
+    &:before {
+      background-color: $billLightColor;
+    }
+
+    &:after {
+      background-image:
+        linear-gradient(to top,
+          $billColor,
+          $billColor 40px,
+          transparent 40px,
+          transparent
+        ),
+        linear-gradient(to right,
+          $billColor,
+          $billColor 10%,
+          transparent 10%,
+          transparent 90%,
+          $billColor 90%,
+          $billColor
+        ),
+
+        repeating-linear-gradient(to bottom,
+          $billColor,
+          $billColor 20px,
+          $billWindowColor 20px,
+          $billWindowColor 50px,
+          $billColor 50px,
+          $billColor 70px
+        );
+    }
+  }
+
+  &.colorBlue {
+    $billColor: $billBlueColor;
+    $billDarkColor: darken($billBlueColor, 20%);
+    $billLightColor: lighten($billBlueColor, 8%);
+
+    background-image:
+      linear-gradient(to bottom,
+        transparent,
+        transparent 90%,
+        $billDarkColor 90%,
+        $billDarkColor
+      ),
+      linear-gradient(to right,
+        $billDarkColor,
+        $billDarkColor 10%,
+        transparent 10%,
+        transparent 90%,
+        $billDarkColor 90%,
+        $billDarkColor
+      ),
+      repeating-linear-gradient(to bottom,
+        $billDarkColor,
+        $billDarkColor 20px,
+        $billWindowColor 20px,
+        $billWindowColor 50px,
+        $billDarkColor 50px,
+        $billDarkColor 70px
+      );
+
+    &:before {
+      background-color: $billLightColor;
+    }
+
+    &:after {
+      background-image:
+        linear-gradient(to bottom,
+          transparent,
+          transparent 90%,
+          $billColor 90%,
+          $billColor
+        ),
+        linear-gradient(to right,
+          $billColor,
+          $billColor 10%,
+          transparent 10%,
+          transparent 90%,
+          $billColor 90%,
+          $billColor
+        ),
+
+        repeating-linear-gradient(to bottom,
+          $billColor,
+          $billColor 20px,
+          $billWindowColor 20px,
+          $billWindowColor 50px,
+          $billColor 50px,
+          $billColor 70px
+        );
+    }
+  }
+
+  &.colorGreen {
+    background-color: darken($billGreenColor, 20%);
+    &:before {
+      background-color: lighten($billGreenColor, 20%);
+    }
+    &:after {
+      background-color: $billGreenColor;
+    }
+  }
+}

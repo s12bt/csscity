@@ -1,14 +1,5 @@
-* {
-  box-sizing: border-box; }
-
-.city {
-  transform: rotate(-30deg) skew(30deg) scale(0.8165, 0.7071) translate(100px, 100px);
-  display: inline-block;
-  z-index: 0;
-  margin-top: 200px; }
-
 /*----------------
-  component
+  land
 */
 .area {
   display: flex;
@@ -98,82 +89,6 @@
   .avenue + .avenue {
     margin-top: 0; }
 
-/*-------------------------
-  car
- */
-.car {
-  position: absolute;
-  z-index: 500;
-  width: 55px;
-  height: 30px;
-  /* color */
-  /* animation */ }
-  .car:before {
-    content: "";
-    position: absolute;
-    top: -7px;
-    border-radius: 6px;
-    width: 24px;
-    height: 25px; }
-  .car:after {
-    content: "";
-    position: absolute;
-    left: 3px;
-    bottom: -13px;
-    width: 12px;
-    height: 12px;
-    background-color: #3C4953;
-    border-radius: 50%;
-    transform: skew(-30deg);
-    box-shadow: 28px 0 0 0 #3C4953; }
-  .car.toRight {
-    right: 0;
-    top: 0;
-    border-radius: 10px 16px 4px 8px; }
-    .car.toRight:before {
-      right: 3px;
-      box-shadow: -6px 4px 0 2px #8CC2EB; }
-  .car.toLeft {
-    left: 0;
-    bottom: 25px;
-    border-radius: 16px 10px 8px 4px; }
-    .car.toLeft:before {
-      right: 9px;
-      box-shadow: -3px 5px 0 2px #8CC2EB; }
-  .car.red {
-    background-image: radial-gradient(ellipse farthest-corner, #E30C0C, #bc0a0a);
-    box-shadow: -3px 5px 0 2px #bc0a0a; }
-    .car.red:before {
-      background-color: #E30C0C; }
-  .car.blue {
-    background-image: radial-gradient(ellipse farthest-corner, #1B53B4, #164391);
-    box-shadow: -3px 5px 0 2px #164391; }
-    .car.blue:before {
-      background-color: #1B53B4; }
-  .car.green {
-    background-image: radial-gradient(ellipse farthest-corner, #3CC1A9, #32a28e);
-    box-shadow: -3px 5px 0 2px #32a28e; }
-    .car.green:before {
-      background-color: #3CC1A9; }
-  .car.run {
-    animation-duration: 15s;
-    animation-direction: normal;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear; }
-  .car.run.toRight {
-    animation-name: onAvenueToRight; }
-  .car.run.toLeft {
-    animation-name: onAvenueToLeft; }
-@keyframes onAvenueToRight {
-  from {
-    right: 0%; }
-  to {
-    right: 100%; } }
-@keyframes onAvenueToLeft {
-  from {
-    left: 0%; }
-  to {
-    left: 100%; } }
 /*-------------------------
   building
  */
@@ -285,5 +200,90 @@
     background: linear-gradient(to top, #98A84A, #8A9843);
     transform: rotateZ(-130deg);
     border-radius: 80% 100% / 64% 100%; }
+
+/*-------------------------
+  car
+ */
+.car {
+  position: absolute;
+  z-index: 500;
+  width: 55px;
+  height: 30px;
+  /* color */
+  /* animation */ }
+  .car:before {
+    content: "";
+    position: absolute;
+    top: -7px;
+    border-radius: 6px;
+    width: 24px;
+    height: 25px; }
+  .car:after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    bottom: -13px;
+    width: 12px;
+    height: 12px;
+    background-color: #3C4953;
+    border-radius: 50%;
+    transform: skew(-30deg);
+    box-shadow: 28px 0 0 0 #3C4953; }
+  .car.toRight {
+    right: 0;
+    top: 0;
+    border-radius: 10px 16px 4px 8px; }
+    .car.toRight:before {
+      right: 3px;
+      box-shadow: -6px 4px 0 2px #8CC2EB; }
+  .car.toLeft {
+    left: 0;
+    bottom: 25px;
+    border-radius: 16px 10px 8px 4px; }
+    .car.toLeft:before {
+      right: 9px;
+      box-shadow: -3px 5px 0 2px #8CC2EB; }
+  .car.red {
+    background-image: radial-gradient(ellipse farthest-corner, #E30C0C, #bc0a0a);
+    box-shadow: -3px 5px 0 2px #bc0a0a; }
+    .car.red:before {
+      background-color: #E30C0C; }
+  .car.blue {
+    background-image: radial-gradient(ellipse farthest-corner, #1B53B4, #164391);
+    box-shadow: -3px 5px 0 2px #164391; }
+    .car.blue:before {
+      background-color: #1B53B4; }
+  .car.green {
+    background-image: radial-gradient(ellipse farthest-corner, #3CC1A9, #32a28e);
+    box-shadow: -3px 5px 0 2px #32a28e; }
+    .car.green:before {
+      background-color: #3CC1A9; }
+  .car.run {
+    animation-duration: 15s;
+    animation-direction: normal;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; }
+  .car.run.toRight {
+    animation-name: onAvenueToRight; }
+  .car.run.toLeft {
+    animation-name: onAvenueToLeft; }
+@keyframes onAvenueToRight {
+  from {
+    right: 0%; }
+  to {
+    right: 100%; } }
+@keyframes onAvenueToLeft {
+  from {
+    left: 0%; }
+  to {
+    left: 100%; } }
+* {
+  box-sizing: border-box; }
+
+.city {
+  transform: rotate(-30deg) skew(30deg) scale(0.8165, 0.7071) translate(100px, 100px);
+  display: inline-block;
+  z-index: 0;
+  margin-top: 200px; }
 
 /*# sourceMappingURL=style.css.map */
