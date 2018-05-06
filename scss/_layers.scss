@@ -16,7 +16,11 @@ $layers: (
     leaves: 2,
     trunk: 1
   ),
-  car: 500
+  car: 500,
+  sky: (
+    base: 1000,
+    cloud: 1000
+  )
 );
 
 @function map-deep-get($map, $keys) {
