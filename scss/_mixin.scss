@@ -1,39 +1,4 @@
-@mixin transformIsometric {
-  transform: rotate(-30deg)
-  skew(30deg)
-  scale(0.8165, 0.7071)
-}
-
-@mixin defaultGroundBase($groundColor: $grassColor) {
-  position: relative;
-  flex-shrink: 0;
-  z-index: layer-get("ground" "flat");
-
-  width: $squareSize;
-  height: $squareSize;
-  background-color: $groundColor;
-
-  &:before {
-    content: "";
-    position: absolute;
-    z-index: layer-get("ground" "depth");
-    top: $squareDepth * 0.5;
-    left: -$squareDepth;
-    width: $squareDepth;
-    height: $squareSize;
-    background-color: darken($groundColor, 10%);
-    transform: skewY(-45deg);
-  }
-
-  &:after {
-    content: "";
-    position: absolute;
-    z-index: layer-get("ground" "depth");
-    bottom: -$squareDepth;
-    right: $squareDepth * 0.5;
-    width: $squareSize;
-    height: $squareDepth;
-    background-color: darken($groundColor, 15%);
-    transform: skewX(-45deg);
-  }
+@mixin pseudoElementBase {
+  content: "";
+  position: absolute;
 }

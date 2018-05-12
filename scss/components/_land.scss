@@ -24,5 +24,36 @@
 }
 
 .address {
-  @include defaultGroundBase();
+  flex-shrink: 0;
+
+  position: relative;
+  z-index: layer-get("ground" "flat");
+  width: $squareSize;
+  height: $squareSize;
+  background-color: $grassColor;
+
+  &:before {
+    @include pseudoElementBase;
+    z-index: layer-get("ground" "depth");
+    width: $squareDepth;
+    height: $squareSize;
+    top: 0;
+    left: -($squareDepth);
+    transform-origin: top right;
+    transform: rotateY(90deg);
+    background-color: darken($grassColor, 10%);
+  }
+
+  &:after {
+    @include pseudoElementBase;
+    z-index: layer-get("ground" "depth");
+    width: $squareSize;
+    height: $squareDepth;
+    bottom: -($squareDepth);
+    left: 0;
+    transform-origin: top;
+    transform: rotateX(90deg);
+    background-color: darken($grassColor, 15%);
+  }
 }
+

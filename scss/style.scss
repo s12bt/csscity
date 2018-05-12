@@ -21,15 +21,13 @@ body {
 
 
 .city {
-  @include transformIsometric;
-  position: relative;
-  left: 100px;
-  top: 100px;
-
-  display: inline-block;
-  z-index: layer-get("base");
+  perspective: 10000px;
+  perspective-origin: top left;
+  transform-style: preserve-3d;
+  transform: rotateX(-70deg) rotateY(0deg) rotateZ(-30deg);
 }
 
+/*
 .busStop {
   position: relative;
   left: 30px;
@@ -48,10 +46,8 @@ body {
     background-color: blue;
     transform: skewY(55deg);
   }
-
 }
-
-
+*/
 
 
 
