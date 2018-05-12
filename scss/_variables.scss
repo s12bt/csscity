@@ -4,12 +4,19 @@ $streetWidth: 100px;
 
 $skyColor: #BEE1E5;
 $cloudColor: #FFF;
-$grassColor: #AEC35A;
+$grassColor: #8CB836;
 
 $streetBaseColor: #6F6C68;
 $streetLineColor: #FFF;
 
-$billStandardColor: #DDDBDC;
+
+/* -------------------------------
+  bill
+ */
+$billStandardSize: $squareSize/2;
+$billStandardColor: #F2F5FF; // base on LEFT SIDE
+
+
 $billBlueColor: #79AAD7;
 $billGreenColor: #B3CD82;
 $billWindowColor: transparentize(#86B8D6, 1-0.8);

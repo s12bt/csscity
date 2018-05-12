@@ -21,7 +21,7 @@ body {
 
 
 .city {
-  perspective: 10000px;
+  perspective: 100000px;
   perspective-origin: top left;
   transform-style: preserve-3d;
   transform: rotateX(-70deg) rotateY(0deg) rotateZ(-30deg);

@@ -2,3 +2,21 @@
   content: "";
   position: absolute;
 }
+
+@mixin leftBend90deg($width: 0, $height: 0) {
+  transform-origin: top right;
+  transform: rotateY(90deg);
+  width: $width;
+  height: $height;
+  top: 0;
+  left: -($width);
+}
+
+@mixin bottomBend90deg($width: 0, $height: 0) {
+  transform-origin: top;
+  transform: rotateX(90deg);
+  width: $width;
+  height: $height;
+  bottom: -($height);
+  left: 0;
+}

@@ -34,25 +34,15 @@
 
   &:before {
     @include pseudoElementBase;
+    @include leftBend90deg($squareDepth, $squareSize);
     z-index: layer-get("ground" "depth");
-    width: $squareDepth;
-    height: $squareSize;
-    top: 0;
-    left: -($squareDepth);
-    transform-origin: top right;
-    transform: rotateY(90deg);
     background-color: darken($grassColor, 10%);
   }
 
   &:after {
     @include pseudoElementBase;
+    @include bottomBend90deg($squareSize, $squareDepth);
     z-index: layer-get("ground" "depth");
-    width: $squareSize;
-    height: $squareDepth;
-    bottom: -($squareDepth);
-    left: 0;
-    transform-origin: top;
-    transform: rotateX(90deg);
     background-color: darken($grassColor, 15%);
   }
 }

@@ -4,36 +4,29 @@
 
 .bill {
   position: absolute;
-  z-index: layer-get("building" "base");
-  bottom: 0;
-  left: 100px * 0.5;
-  width: 100px;
-  height: 100px;
-  transform: rotate(45deg) skewY(-45deg) scale(0.7, 1);
-  background-color: darken($billStandardColor, 20%);
+  margin-left: ($squareSize - $billStandardSize)/2;
+  margin-top:  ($squareSize - $billStandardSize)/2;
+
+  width: $billStandardSize;
+  height: $billStandardSize;
+  transform: translateZ(-200px);
+  background-color: lighten($billStandardColor, 1%);
+
+  // Pseudo element needs 3d transform
+  transform-style: preserve-3d;
 
   &:before {
-    content: "";
-    position: absolute;
-    top: -115px;
-    right: 45px;
-    transform: skewX(35deg) scale(1, 1.3);
-
-    width: 100px;
-    height: 100px;
-    background-color: lighten($billStandardColor, 8%);
+    @include pseudoElementBase;
+    @include leftBend90deg(200px, $billStandardSize);
+    background-color: $billStandardColor;
   }
 
   &:after {
-    content: "";
-    position: absolute;
-    left: -100px;
-    top: -130px;
-    width: 100px;
-    height: 100px;
-    transform: skewY(55deg) translate(5px, 57px) scaleX(0.9);
-    background-color: $billStandardColor;
+    @include pseudoElementBase;
+    @include bottomBend90deg($billStandardSize, 200px);
+    background-color: darken($billStandardColor, 1%);
   }
+
 
   /* building height */
   @for $i from 1 through 4 {
