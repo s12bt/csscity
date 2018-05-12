@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="scss/transformTest.css" />
+  <title>transformTest</title>
+</head>
+<body>
+
+<h2>3d</h2>
+<div style="perspective: 10000px;
+            transform-style: preserve-3d;
+            transform:rotateX(-20deg) rotateY(-40deg)">
+  <div class="cube"
+       style="
+       transform:rotateX(-90deg);">
+    aaaa
+  </div>
+</div>
+
+
+
+<h2>transform-origin & rotate</h2>
+<div style="display: flex">
+  <div class="cube"></div>
+  
+  <div class="cube rotate"
+       style="transform: rotate(30deg)">
+    指定なし
+  </div>
+  
+  <div class="cube rotate"
+       style="transform-origin: top;
+     transform: rotate(30deg)">
+    top
+  </div>
+  
+  <div class="cube rotate"
+       style="transform-origin: top left;
+     transform: rotate(30deg)">
+    top left
+  </div>
+</div>
+
+
+<h2>skew & height</h2>
+<div style="display: flex">
+  <div class="cube"></div>
+  <div class="cube skew"
+       style="transform: skewX(45deg)">
+    指定なし
+  </div>
+  
+</div>
+
+<h2>transform-origin & skew</h2>
+<div class="cube"></div>
+
+<div class="cube skew"
+     style="transform: skewX(45deg)">
+  指定なし
+</div>
+
+<div class="cube skew"
+     style="transform-origin: top;
+            transform: skewX(45deg)">
+  top skewX45drg
+</div>
+
+<div class="cube skew"
+     style="transform-origin: top;
+            transform: skewX(-45deg)">
+  top skewX-45drg
+</div>
+
+<div class="cube skew"
+     style="transform-origin: top left;
+            transform: skewX(45deg)"></div>
+
+<div class="cube skew"
+     style="transform-origin: top left;
+            transform: skewX(-45deg)"></div>
+
+
+<div class="cube skew"
+     style="skew(30deg)"
+>
+
+</div>
+
+<h2>cube</h2>
+<div class="cube"></div>
+
+
+</body>
+</html>
