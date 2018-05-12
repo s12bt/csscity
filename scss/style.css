@@ -1,5 +1,5 @@
 .sky {
-  position: fixed;
+  position: absolute;
   z-index: 1000;
   width: 100vw;
   height: 100%; }
@@ -9,12 +9,11 @@
   position: absolute;
   z-index: 1000;
   top: 0;
-  right: 0;
   width: 180px;
   height: 80px;
   background-color: #FFF;
   border-radius: 100px / 70px;
-  box-shadow: 0 5px 15px 1px rgba(117, 191, 200, 0.2), -140px 400px 20px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px 1px rgba(117, 191, 200, 0.2), -290px 400px 20px 5px rgba(0, 0, 0, 0.1);
   opacity: 0.8;
   /* animation */ }
   .cloud:before {
@@ -38,25 +37,25 @@
     border-radius: 50%;
     box-shadow: -4px -3px 5px -1px #E2EBF0; }
   .cloud:nth-of-type(1) {
-    top: 274px; }
+    top: 280px; }
   .cloud:nth-of-type(2) {
-    top: 444px; }
+    top: 495px; }
   .cloud:nth-of-type(3) {
-    top: 656px; }
+    top: 678px; }
   .cloud:nth-of-type(4) {
-    top: 882px; }
+    top: 873px; }
   .cloud:nth-of-type(5) {
-    top: 1024px; }
+    top: 1067px; }
   .cloud:nth-of-type(6) {
-    top: 1251px; }
+    top: 1206px; }
   .cloud:nth-of-type(7) {
-    top: 1422px; }
+    top: 1439px; }
   .cloud:nth-of-type(8) {
-    top: 1680px; }
+    top: 1700px; }
   .cloud:nth-of-type(9) {
-    top: 1879px; }
+    top: 1817px; }
   .cloud:nth-of-type(10) {
-    top: 2053px; }
+    top: 2100px; }
   .cloud.move {
     opacity: 0;
     animation-name: cloudMove;
@@ -65,43 +64,43 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear; }
     .cloud.move:nth-of-type(1) {
-      animation-duration: 32s;
+      animation-duration: 34s;
       animation-delay: 4s; }
     .cloud.move:nth-of-type(2) {
-      animation-duration: 49s;
-      animation-delay: 9s; }
+      animation-duration: 32s;
+      animation-delay: 5s; }
     .cloud.move:nth-of-type(3) {
-      animation-duration: 43s;
-      animation-delay: 7s; }
+      animation-duration: 32s;
+      animation-delay: 4s; }
     .cloud.move:nth-of-type(4) {
       animation-duration: 38s;
-      animation-delay: 10s; }
+      animation-delay: 5s; }
     .cloud.move:nth-of-type(5) {
-      animation-duration: 48s;
-      animation-delay: 2s; }
-    .cloud.move:nth-of-type(6) {
-      animation-duration: 39s;
-      animation-delay: 3s; }
-    .cloud.move:nth-of-type(7) {
-      animation-duration: 43s;
+      animation-duration: 38s;
       animation-delay: 6s; }
-    .cloud.move:nth-of-type(8) {
-      animation-duration: 42s;
-      animation-delay: 8s; }
-    .cloud.move:nth-of-type(9) {
+    .cloud.move:nth-of-type(6) {
       animation-duration: 32s;
-      animation-delay: 8s; }
+      animation-delay: 1s; }
+    .cloud.move:nth-of-type(7) {
+      animation-duration: 42s;
+      animation-delay: 9s; }
+    .cloud.move:nth-of-type(8) {
+      animation-duration: 43s;
+      animation-delay: 4s; }
+    .cloud.move:nth-of-type(9) {
+      animation-duration: 34s;
+      animation-delay: 5s; }
     .cloud.move:nth-of-type(10) {
-      animation-duration: 37s;
-      animation-delay: 2s; }
+      animation-duration: 50s;
+      animation-delay: 6s; }
 @keyframes cloudMove {
   0% {
-    right: 0%;
+    transform: rotate(-6deg) skew(30deg) scale(0.8165, 0.7071) translateX(0);
     opacity: 0; }
   20% {
     opacity: 0.8; }
   100% {
-    right: 100%;
+    transform: rotate(-6deg) skew(30deg) scale(0.8165, 0.7071) translateX(100vw);
     opacity: 0; } }
 /*----------------
   land
@@ -386,310 +385,310 @@
   animation-duration: 22s;
   animation-delay: 1s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(2) {
-  animation-duration: 18s;
+  animation-duration: 22s;
   animation-delay: 3s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(3) {
-  animation-duration: 20s;
+  animation-duration: 24s;
   animation-delay: 2s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(4) {
-  animation-duration: 26s;
-  animation-delay: 1s; }
+  animation-duration: 16s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(5) {
   animation-duration: 16s;
   animation-delay: 1s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(6) {
-  animation-duration: 22s;
+  animation-duration: 16s;
   animation-delay: 2s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(7) {
-  animation-duration: 22s;
-  animation-delay: 2s; }
+  animation-duration: 10s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(8) {
   animation-duration: 22s;
-  animation-delay: 2s; }
+  animation-delay: 1s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(9) {
   animation-duration: 28s;
   animation-delay: 2s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(10) {
-  animation-duration: 16s;
+  animation-duration: 24s;
   animation-delay: 3s; }
 
 .avenue:nth-of-type(2) .car.run:nth-of-type(1) {
-  animation-duration: 14s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(2) .car.run:nth-of-type(2) {
-  animation-duration: 12s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(2) .car.run:nth-of-type(3) {
-  animation-duration: 14s;
+  animation-duration: 18s;
   animation-delay: 3s; }
-.avenue:nth-of-type(2) .car.run:nth-of-type(4) {
+.avenue:nth-of-type(2) .car.run:nth-of-type(2) {
+  animation-duration: 10s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(3) {
   animation-duration: 12s;
   animation-delay: 2s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(4) {
+  animation-duration: 22s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(5) {
-  animation-duration: 28s;
-  animation-delay: 3s; }
+  animation-duration: 16s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(6) {
-  animation-duration: 26s;
-  animation-delay: 3s; }
+  animation-duration: 22s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(7) {
-  animation-duration: 28s;
-  animation-delay: 3s; }
+  animation-duration: 24s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(8) {
-  animation-duration: 18s;
+  animation-duration: 28s;
   animation-delay: 2s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(9) {
   animation-duration: 18s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(2) .car.run:nth-of-type(10) {
-  animation-duration: 26s;
   animation-delay: 1s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(10) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
 
 .avenue:nth-of-type(3) .car.run:nth-of-type(1) {
-  animation-duration: 24s;
-  animation-delay: 2s; }
+  animation-duration: 16s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(3) .car.run:nth-of-type(2) {
-  animation-duration: 26s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(3) {
-  animation-duration: 12s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(4) {
-  animation-duration: 20s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(5) {
-  animation-duration: 14s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(6) {
-  animation-duration: 26s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(7) {
-  animation-duration: 18s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(8) {
-  animation-duration: 20s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(9) {
-  animation-duration: 18s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(10) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
-
-.avenue:nth-of-type(4) .car.run:nth-of-type(1) {
-  animation-duration: 14s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(2) {
-  animation-duration: 20s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(3) {
-  animation-duration: 26s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(4) {
-  animation-duration: 12s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(5) {
-  animation-duration: 18s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(6) {
-  animation-duration: 10s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(7) {
-  animation-duration: 20s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(8) {
-  animation-duration: 20s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(9) {
-  animation-duration: 12s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(10) {
-  animation-duration: 24s;
-  animation-delay: 1s; }
-
-.avenue:nth-of-type(5) .car.run:nth-of-type(1) {
-  animation-duration: 18s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(2) {
-  animation-duration: 26s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(3) {
-  animation-duration: 14s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(4) {
   animation-duration: 16s;
   animation-delay: 3s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(5) {
+.avenue:nth-of-type(3) .car.run:nth-of-type(3) {
+  animation-duration: 20s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(4) {
+  animation-duration: 16s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(5) {
+  animation-duration: 12s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(6) {
+  animation-duration: 16s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(7) {
+  animation-duration: 22s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(8) {
+  animation-duration: 18s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(9) {
+  animation-duration: 28s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(10) {
+  animation-duration: 24s;
+  animation-delay: 2s; }
+
+.avenue:nth-of-type(4) .car.run:nth-of-type(1) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(2) {
+  animation-duration: 24s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(3) {
+  animation-duration: 22s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(4) {
+  animation-duration: 24s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(5) {
+  animation-duration: 24s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(6) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(7) {
+  animation-duration: 18s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(8) {
+  animation-duration: 28s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(9) {
+  animation-duration: 28s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(10) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
+
+.avenue:nth-of-type(5) .car.run:nth-of-type(1) {
+  animation-duration: 26s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(2) {
   animation-duration: 28s;
   animation-delay: 1s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(6) {
-  animation-duration: 24s;
+.avenue:nth-of-type(5) .car.run:nth-of-type(3) {
+  animation-duration: 16s;
   animation-delay: 3s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(4) {
+  animation-duration: 16s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(5) {
+  animation-duration: 22s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(6) {
+  animation-duration: 26s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(5) .car.run:nth-of-type(7) {
-  animation-duration: 14s;
+  animation-duration: 10s;
   animation-delay: 2s; }
 .avenue:nth-of-type(5) .car.run:nth-of-type(8) {
-  animation-duration: 12s;
+  animation-duration: 22s;
   animation-delay: 1s; }
 .avenue:nth-of-type(5) .car.run:nth-of-type(9) {
-  animation-duration: 26s;
-  animation-delay: 3s; }
+  animation-duration: 16s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(5) .car.run:nth-of-type(10) {
-  animation-duration: 26s;
+  animation-duration: 28s;
   animation-delay: 3s; }
 
 .avenue:nth-of-type(6) .car.run:nth-of-type(1) {
-  animation-duration: 12s;
+  animation-duration: 16s;
   animation-delay: 2s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(2) {
-  animation-duration: 14s;
-  animation-delay: 3s; }
+  animation-duration: 24s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(3) {
-  animation-duration: 18s;
+  animation-duration: 16s;
   animation-delay: 1s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(4) {
-  animation-duration: 20s;
-  animation-delay: 1s; }
+  animation-duration: 28s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(5) {
-  animation-duration: 20s;
-  animation-delay: 1s; }
+  animation-duration: 28s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(6) {
-  animation-duration: 10s;
-  animation-delay: 1s; }
+  animation-duration: 24s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(7) {
   animation-duration: 10s;
-  animation-delay: 2s; }
+  animation-delay: 3s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(8) {
   animation-duration: 14s;
-  animation-delay: 1s; }
+  animation-delay: 2s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(9) {
+  animation-duration: 18s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(10) {
   animation-duration: 28s;
   animation-delay: 2s; }
-.avenue:nth-of-type(6) .car.run:nth-of-type(10) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
 
 .avenue:nth-of-type(7) .car.run:nth-of-type(1) {
-  animation-duration: 14s;
+  animation-duration: 12s;
   animation-delay: 3s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(2) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
+  animation-duration: 12s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(3) {
-  animation-duration: 14s;
+  animation-duration: 24s;
   animation-delay: 1s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(4) {
-  animation-duration: 12s;
-  animation-delay: 1s; }
+  animation-duration: 28s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(5) {
-  animation-duration: 20s;
-  animation-delay: 1s; }
+  animation-duration: 22s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(6) {
-  animation-duration: 16s;
-  animation-delay: 3s; }
+  animation-duration: 18s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(7) {
-  animation-duration: 18s;
-  animation-delay: 3s; }
+  animation-duration: 16s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(8) {
-  animation-duration: 18s;
+  animation-duration: 20s;
   animation-delay: 2s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(9) {
-  animation-duration: 12s;
+  animation-duration: 18s;
   animation-delay: 1s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(10) {
-  animation-duration: 24s;
-  animation-delay: 2s; }
-
-.avenue:nth-of-type(8) .car.run:nth-of-type(1) {
-  animation-duration: 10s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(8) .car.run:nth-of-type(2) {
-  animation-duration: 26s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(8) .car.run:nth-of-type(3) {
   animation-duration: 14s;
   animation-delay: 1s; }
-.avenue:nth-of-type(8) .car.run:nth-of-type(4) {
+
+.avenue:nth-of-type(8) .car.run:nth-of-type(1) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(2) {
+  animation-duration: 22s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(3) {
   animation-duration: 12s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(4) {
+  animation-duration: 16s;
   animation-delay: 1s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(5) {
-  animation-duration: 12s;
-  animation-delay: 3s; }
+  animation-duration: 18s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(6) {
-  animation-duration: 20s;
-  animation-delay: 1s; }
+  animation-duration: 28s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(7) {
-  animation-duration: 22s;
-  animation-delay: 1s; }
+  animation-duration: 24s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(8) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
+  animation-duration: 24s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(9) {
-  animation-duration: 18s;
+  animation-duration: 24s;
   animation-delay: 1s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(10) {
-  animation-duration: 28s;
-  animation-delay: 1s; }
+  animation-duration: 24s;
+  animation-delay: 3s; }
 
 .avenue:nth-of-type(9) .car.run:nth-of-type(1) {
-  animation-duration: 12s;
+  animation-duration: 14s;
   animation-delay: 2s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(2) {
-  animation-duration: 28s;
-  animation-delay: 3s; }
+  animation-duration: 24s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(3) {
-  animation-duration: 18s;
+  animation-duration: 12s;
   animation-delay: 2s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(4) {
-  animation-duration: 16s;
+  animation-duration: 14s;
   animation-delay: 2s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(5) {
-  animation-duration: 12s;
+  animation-duration: 24s;
   animation-delay: 1s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(6) {
-  animation-duration: 12s;
+  animation-duration: 14s;
   animation-delay: 3s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(7) {
-  animation-duration: 20s;
-  animation-delay: 1s; }
+  animation-duration: 24s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(8) {
-  animation-duration: 18s;
+  animation-duration: 10s;
   animation-delay: 3s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(9) {
-  animation-duration: 24s;
-  animation-delay: 2s; }
+  animation-duration: 26s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(10) {
-  animation-duration: 22s;
-  animation-delay: 2s; }
+  animation-duration: 20s;
+  animation-delay: 3s; }
 
 .avenue:nth-of-type(10) .car.run:nth-of-type(1) {
-  animation-duration: 12s;
+  animation-duration: 22s;
   animation-delay: 2s; }
 .avenue:nth-of-type(10) .car.run:nth-of-type(2) {
-  animation-duration: 28s;
-  animation-delay: 1s; }
+  animation-duration: 20s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(10) .car.run:nth-of-type(3) {
-  animation-duration: 24s;
-  animation-delay: 2s; }
+  animation-duration: 20s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(10) .car.run:nth-of-type(4) {
   animation-duration: 28s;
-  animation-delay: 2s; }
+  animation-delay: 1s; }
 .avenue:nth-of-type(10) .car.run:nth-of-type(5) {
-  animation-duration: 22s;
+  animation-duration: 20s;
   animation-delay: 2s; }
 .avenue:nth-of-type(10) .car.run:nth-of-type(6) {
   animation-duration: 20s;
   animation-delay: 1s; }
 .avenue:nth-of-type(10) .car.run:nth-of-type(7) {
-  animation-duration: 14s;
-  animation-delay: 2s; }
+  animation-duration: 28s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(10) .car.run:nth-of-type(8) {
-  animation-duration: 10s;
+  animation-duration: 24s;
   animation-delay: 1s; }
 .avenue:nth-of-type(10) .car.run:nth-of-type(9) {
-  animation-duration: 20s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(10) {
   animation-duration: 10s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(10) {
+  animation-duration: 14s;
   animation-delay: 3s; }
 
 * {
