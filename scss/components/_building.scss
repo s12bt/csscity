@@ -3,6 +3,7 @@
  */
 
 .bill {
+  /* base */
   $billBaseColor:   $billStandardColor;
   $billTopColor:    lighten($billStandardColor, 1%);
   $billShadowColor: darken($billStandardColor, 1%);
@@ -24,7 +25,6 @@
     @include leftBend90deg($billMediumHeight, $billStandardSize);
     @include windowRectangle4x5LeftSide($billBaseColor);
     background-color: $billBaseColor;
-
   }
 
   &:after {
@@ -34,6 +34,8 @@
     background-color: $billShadowColor;
   }
 
+
+  /* height variation */
   &.high {
     @include billHeightBase($billStandardSize, $billHighHeight);
   }
@@ -45,4 +47,31 @@
   &.low {
     @include billHeightBase($billStandardSize, $billLowHeight);
   }
+
+  /* color & window variation */
+  &.brown {
+    $billBaseColor:   $billBrownColor;
+    $billTopColor:    lighten($billBrownColor, 1%);
+    $billShadowColor: darken($billBrownColor, 1%);
+    $bllWindowColor:  #C6B09D;
+
+    background-color: $billTopColor;
+    box-shadow: 15px 15px 0 0 lighten($billTopColor, 5%) inset,
+                -15px -15px 0 0 lighten($billTopColor, 5%) inset,
+                0 0 15px 15px transparentize(#CCC, 1-0.3) inset;
+
+    &:before {
+      @include windowWiderLeftSide($billBaseColor, $bllWindowColor);
+    }
+
+    &:after {
+      @include windowWiderBottomSide($billBaseColor, $bllWindowColor);
+    }
+  }
+
+  &.white {}
+
+  &.gray {}
+
+  &.blue {}
 }

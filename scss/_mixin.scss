@@ -93,3 +93,43 @@
       $surfaceColor 90px, $surfaceColor 100px
     );
 }
+
+@mixin windowWiderLeftSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to bottom,
+      $surfaceColor,     $surfaceColor 10%,
+      transparent   10%, transparent   90%,
+      $surfaceColor 90%, $surfaceColor
+    ),
+    repeating-linear-gradient(to left,
+      $surfaceColor,      $surfaceColor  8px,
+      $windowColor   8px, $windowColor  16px,
+      $surfaceColor 16px, $surfaceColor 18px,
+      $windowColor  18px, $windowColor  24px,
+      $surfaceColor 24px, $surfaceColor 26px,
+      $windowColor  26px, $windowColor  34px,
+      $surfaceColor 34px, $surfaceColor 36px,
+      $windowColor  36px, $windowColor  44px,
+      $surfaceColor 44px, $surfaceColor 50px
+    );
+}
+
+@mixin windowWiderBottomSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to left,
+      $surfaceColor,     $surfaceColor 10%,
+      transparent   10%, transparent   90%,
+      $surfaceColor 90%, $surfaceColor
+    ),
+    repeating-linear-gradient(to bottom,
+      $surfaceColor,      $surfaceColor  8px,
+      $windowColor   8px, $windowColor  16px,
+      $surfaceColor 16px, $surfaceColor 18px,
+      $windowColor  18px, $windowColor  24px,
+      $surfaceColor 24px, $surfaceColor 26px,
+      $windowColor  26px, $windowColor  34px,
+      $surfaceColor 34px, $surfaceColor 36px,
+      $windowColor  36px, $windowColor  44px,
+      $surfaceColor 44px, $surfaceColor 50px
+    );
+}

@@ -13,12 +13,17 @@ $streetLineColor: #FFF;
 /* -------------------------------
   bill
  */
+// area
 $billStandardSize: $squareSize/2;
-$billStandardColor: #F2F5FF; // base on LEFT SIDE
 
-$billLowHeight: 100px;
+// height
+$billLowHeight:    100px;
 $billMediumHeight: 200px;
-$billHighHeight: 500px;
+$billHighHeight:   450px;
+
+// color - left side on bill
+$billStandardColor: #F2F5FF;
+$billBrownColor   : #F3E6D4;
 
 $billBlueColor: #79AAD7;
 $billGreenColor: #B3CD82;
