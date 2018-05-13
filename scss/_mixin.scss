@@ -20,3 +20,76 @@
   bottom: -($height);
   left: 0;
 }
+
+/* ------------------------
+  bill
+ */
+// height
+@mixin billHeightBase($area, $height) {
+  transform: translateZ(-$height);
+
+  &:before {
+    @include leftBend90deg($height, $area);
+  }
+
+  &:after {
+    @include bottomBend90deg($area, $height);
+  }
+}
+
+// window variation
+@mixin windowRectangle4x5LeftSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to bottom,
+      $surfaceColor,     $surfaceColor 17%,
+      transparent   17%, transparent   27%,
+      $surfaceColor 27%, $surfaceColor 31%,
+      transparent   31%, transparent   41%,
+      $surfaceColor 41%, $surfaceColor 45%,
+      transparent   45%, transparent   55%,
+      $surfaceColor 55%, $surfaceColor 59%,
+      transparent   59%, transparent   69%,
+      $surfaceColor 69%, $surfaceColor 73%,
+      transparent   73%, transparent   83%,
+      $surfaceColor 83%, $surfaceColor
+    ),
+    repeating-linear-gradient(to left,
+      $surfaceColor,      $surfaceColor 15px,
+      $windowColor  15px, $windowColor  30px,
+      $surfaceColor 30px, $surfaceColor 35px,
+      $windowColor  35px, $windowColor  50px,
+      $surfaceColor 50px, $surfaceColor 55px,
+      $windowColor  55px, $windowColor  70px,
+      $surfaceColor 70px, $surfaceColor 75px,
+      $windowColor  75px, $windowColor  90px,
+      $surfaceColor 90px, $surfaceColor 100px
+    );
+}
+
+@mixin windowRectangle4x5BottomSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to left,
+      $surfaceColor,     $surfaceColor 17%,
+      transparent   17%, transparent   27%,
+      $surfaceColor 27%, $surfaceColor 31%,
+      transparent   31%, transparent   41%,
+      $surfaceColor 41%, $surfaceColor 45%,
+      transparent   45%, transparent   55%,
+      $surfaceColor 55%, $surfaceColor 59%,
+      transparent   59%, transparent   69%,
+      $surfaceColor 69%, $surfaceColor 73%,
+      transparent   73%, transparent   83%,
+      $surfaceColor 83%, $surfaceColor
+    ),
+    repeating-linear-gradient(to bottom,
+      $surfaceColor,      $surfaceColor 15px,
+      $windowColor  15px, $windowColor  30px,
+      $surfaceColor 30px, $surfaceColor 35px,
+      $windowColor  35px, $windowColor  50px,
+      $surfaceColor 50px, $surfaceColor 55px,
+      $windowColor  55px, $windowColor  70px,
+      $surfaceColor 70px, $surfaceColor 75px,
+      $windowColor  75px, $windowColor  90px,
+      $surfaceColor 90px, $surfaceColor 100px
+    );
+}
