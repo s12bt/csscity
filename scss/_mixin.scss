@@ -25,15 +25,15 @@
   bill
  */
 // height
-@mixin billHeightBase($area, $height) {
+@mixin billHeightBase($wide, $length, $height) {
   transform: translateZ(-$height);
 
   &:before {
-    @include leftBend90deg($height, $area);
+    @include leftBend90deg($height, $length);
   }
 
   &:after {
-    @include bottomBend90deg($area, $height);
+    @include bottomBend90deg($wide, $height);
   }
 }
 
@@ -65,6 +65,7 @@
       $surfaceColor 90px, $surfaceColor 100px
     );
 }
+
 
 @mixin windowRectangle4x5BottomSide($surfaceColor, $windowColor: #7292AB) {
   background-image:
@@ -133,3 +134,4 @@
       $surfaceColor 44px, $surfaceColor 50px
     );
 }
+

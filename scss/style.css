@@ -1,10 +1,83 @@
 /* -------------------------------
+  BASIS
+ */
+/* -------------------------------
+  City Planning
+ */
+/* -------------------------------
+  Land
+ */
+/* -------------------------------
   bill
+ */
+/* -------------------------------
+  pending
  */
 /* ------------------------
   bill
  */
+.city {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  width: 1200px;
+  /* 3d view */
+  perspective: 100000px;
+  perspective-origin: top left;
+  transform-style: preserve-3d;
+  transform: rotateX(-65deg) rotateY(0deg) rotateZ(-45deg) translateX(400px); }
+
+.block {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  max-width: 200px;
+  max-height: 200px; }
+  .block.wide1 {
+    max-width: 200px; }
+  .block.length1 {
+    max-height: 200px; }
+  .block.wide2 {
+    max-width: 400px; }
+  .block.length2 {
+    max-height: 400px; }
+  .block.wide3 {
+    max-width: 600px; }
+  .block.length3 {
+    max-height: 600px; }
+  .block.wide4 {
+    max-width: 800px; }
+  .block.length4 {
+    max-height: 800px; }
+  .block.wide5 {
+    max-width: 1000px; }
+  .block.length5 {
+    max-height: 1000px; }
+  .block.wide6 {
+    max-width: 1200px; }
+  .block.length6 {
+    max-height: 1200px; }
+  .block.wide7 {
+    max-width: 1400px; }
+  .block.length7 {
+    max-height: 1400px; }
+  .block.wide8 {
+    max-width: 1600px; }
+  .block.length8 {
+    max-height: 1600px; }
+  .block.wide9 {
+    max-width: 1800px; }
+  .block.length9 {
+    max-height: 1800px; }
+  .block.wide10 {
+    max-width: 2000px; }
+  .block.length10 {
+    max-height: 2000px; }
+
 .sky {
+  display: none;
   position: absolute;
   z-index: 1000;
   width: 100vw;
@@ -43,25 +116,25 @@
     border-radius: 50%;
     box-shadow: -4px -3px 5px -1px #E2EBF0; }
   .cloud:nth-of-type(1) {
-    top: 297px; }
+    top: 244px; }
   .cloud:nth-of-type(2) {
-    top: 449px; }
+    top: 483px; }
   .cloud:nth-of-type(3) {
-    top: 609px; }
+    top: 603px; }
   .cloud:nth-of-type(4) {
-    top: 841px; }
+    top: 887px; }
   .cloud:nth-of-type(5) {
-    top: 1001px; }
+    top: 1065px; }
   .cloud:nth-of-type(6) {
-    top: 1256px; }
+    top: 1224px; }
   .cloud:nth-of-type(7) {
-    top: 1442px; }
+    top: 1467px; }
   .cloud:nth-of-type(8) {
-    top: 1655px; }
+    top: 1607px; }
   .cloud:nth-of-type(9) {
-    top: 1818px; }
+    top: 1865px; }
   .cloud:nth-of-type(10) {
-    top: 2090px; }
+    top: 2019px; }
   .cloud.move {
     opacity: 0;
     animation-name: cloudMove;
@@ -70,35 +143,35 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear; }
     .cloud.move:nth-of-type(1) {
-      animation-duration: 43s;
-      animation-delay: 2s; }
-    .cloud.move:nth-of-type(2) {
-      animation-duration: 47s;
-      animation-delay: 8s; }
-    .cloud.move:nth-of-type(3) {
-      animation-duration: 33s;
+      animation-duration: 35s;
       animation-delay: 9s; }
+    .cloud.move:nth-of-type(2) {
+      animation-duration: 31s;
+      animation-delay: 9s; }
+    .cloud.move:nth-of-type(3) {
+      animation-duration: 48s;
+      animation-delay: 1s; }
     .cloud.move:nth-of-type(4) {
-      animation-duration: 45s;
-      animation-delay: 3s; }
+      animation-duration: 47s;
+      animation-delay: 1s; }
     .cloud.move:nth-of-type(5) {
-      animation-duration: 34s;
-      animation-delay: 3s; }
+      animation-duration: 31s;
+      animation-delay: 4s; }
     .cloud.move:nth-of-type(6) {
-      animation-duration: 36s;
+      animation-duration: 42s;
       animation-delay: 7s; }
     .cloud.move:nth-of-type(7) {
-      animation-duration: 45s;
-      animation-delay: 7s; }
-    .cloud.move:nth-of-type(8) {
-      animation-duration: 37s;
+      animation-duration: 39s;
       animation-delay: 3s; }
-    .cloud.move:nth-of-type(9) {
-      animation-duration: 34s;
-      animation-delay: 1s; }
-    .cloud.move:nth-of-type(10) {
-      animation-duration: 46s;
+    .cloud.move:nth-of-type(8) {
+      animation-duration: 50s;
       animation-delay: 6s; }
+    .cloud.move:nth-of-type(9) {
+      animation-duration: 31s;
+      animation-delay: 7s; }
+    .cloud.move:nth-of-type(10) {
+      animation-duration: 49s;
+      animation-delay: 2s; }
 @keyframes cloudMove {
   0% {
     transform: rotate(-6deg) skew(30deg) scale(0.8165, 0.7071) translateX(0);
@@ -111,39 +184,6 @@
 /*----------------
   land
 */
-.area {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row-reverse; }
-
-.block {
-  flex-shrink: 0;
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  max-width: 400px; }
-  .block.wide1 {
-    max-width: 200px; }
-  .block.wide2 {
-    max-width: 400px; }
-  .block.wide3 {
-    max-width: 600px; }
-  .block.wide4 {
-    max-width: 800px; }
-  .block.wide5 {
-    max-width: 1000px; }
-  .block.wide6 {
-    max-width: 1200px; }
-  .block.wide7 {
-    max-width: 1400px; }
-  .block.wide8 {
-    max-width: 1600px; }
-  .block.wide9 {
-    max-width: 1800px; }
-  .block.wide10 {
-    max-width: 2000px; }
-
 .address {
   flex-shrink: 0;
   position: relative;
@@ -160,7 +200,6 @@
     height: 200px;
     top: 0;
     left: -10px;
-    z-index: 100;
     background-color: #6e912a; }
   .address:after {
     content: "";
@@ -171,7 +210,6 @@
     height: 10px;
     bottom: -10px;
     left: 0;
-    z-index: 100;
     background-color: #5f7d25; }
 
 /*-------------------------
@@ -179,27 +217,20 @@
  */
 .street {
   position: relative;
-  top: 10px;
-  left: -10px;
   z-index: 0;
   flex-shrink: 0;
   width: 100px;
-  background-image: linear-gradient(to bottom, #6F6C68, #6F6C68 20px, transparent 20px, transparent 80px, #6F6C68 80px, #6F6C68), linear-gradient(to right, #6F6C68, #6F6C68 48%, #FFF 48%, #FFF 52%, #6F6C68 52%, #6F6C68);
+  height: 400px;
+  background-image: linear-gradient(to bottom, #8D9192, #8D9192 20px, transparent 20px, transparent 80px, #8D9192 80px, #8D9192), linear-gradient(to right, #8D9192, #8D9192 48%, #FFF 48%, #FFF 52%, #8D9192 52%, #8D9192);
   background-size: 100px 100px, 100px 100px;
   background-repeat: repeat-y; }
 
 .avenue {
   position: relative;
   padding: 5px 0;
-  right: 10px;
   width: 100%;
   height: 100px;
-  margin-top: 10px;
-  background-image: linear-gradient(to bottom, #6F6C68, #6F6C68 48%, transparent 48%, transparent 52%, #6F6C68 52%, #6F6C68), repeating-linear-gradient(to right, #FFF, #FFF 40px, #6F6C68 40px, #6F6C68 80px, #FFF 80px, #FFF 100px); }
-  .avenue + .area {
-    margin-top: -10px; }
-  .avenue + .avenue {
-    margin-top: 0; }
+  background-image: linear-gradient(to bottom, #8D9192, #8D9192 48%, transparent 48%, transparent 52%, #8D9192 52%, #8D9192), repeating-linear-gradient(to right, #FFF, #FFF 40px, #8D9192 40px, #8D9192 80px, #FFF 80px, #FFF 100px); }
 
 /*-------------------------
   building
@@ -215,6 +246,7 @@
   background-color: #f7f9ff;
   transform-style: preserve-3d;
   /* height variation */
+  /* shape variation */
   /* color & window variation */ }
   .bill:before {
     content: "";
@@ -239,20 +271,20 @@
     background-image: linear-gradient(to left, #edf1ff, #edf1ff 17%, transparent 17%, transparent 27%, #edf1ff 27%, #edf1ff 31%, transparent 31%, transparent 41%, #edf1ff 41%, #edf1ff 45%, transparent 45%, transparent 55%, #edf1ff 55%, #edf1ff 59%, transparent 59%, transparent 69%, #edf1ff 69%, #edf1ff 73%, transparent 73%, transparent 83%, #edf1ff 83%, #edf1ff), repeating-linear-gradient(to bottom, #edf1ff, #edf1ff 15px, #7292AB 15px, #7292AB 30px, #edf1ff 30px, #edf1ff 35px, #7292AB 35px, #7292AB 50px, #edf1ff 50px, #edf1ff 55px, #7292AB 55px, #7292AB 70px, #edf1ff 70px, #edf1ff 75px, #7292AB 75px, #7292AB 90px, #edf1ff 90px, #edf1ff 100px);
     background-color: #edf1ff; }
   .bill.high {
-    transform: translateZ(-450px); }
+    transform: translateZ(-300px); }
     .bill.high:before {
       transform-origin: top right;
       transform: rotateY(90deg);
-      width: 450px;
+      width: 300px;
       height: 100px;
       top: 0;
-      left: -450px; }
+      left: -300px; }
     .bill.high:after {
       transform-origin: top;
       transform: rotateX(90deg);
       width: 100px;
-      height: 450px;
-      bottom: -450px;
+      height: 300px;
+      bottom: -300px;
       left: 0; }
   .bill.middle {
     transform: translateZ(-200px); }
@@ -286,6 +318,143 @@
       height: 100px;
       bottom: -100px;
       left: 0; }
+  .bill.rectangle {
+    margin-left: 60px;
+    margin-top: 25px;
+    width: 80px;
+    height: 150px; }
+    .bill.rectangle:before {
+      transform-origin: top right;
+      transform: rotateY(90deg);
+      width: 200px;
+      height: 150px;
+      top: 0;
+      left: -200px; }
+    .bill.rectangle:after {
+      transform-origin: top;
+      transform: rotateX(90deg);
+      width: 80px;
+      height: 200px;
+      bottom: -200px;
+      left: 0; }
+    .bill.rectangle.high {
+      transform: translateZ(-300px); }
+      .bill.rectangle.high:before {
+        transform-origin: top right;
+        transform: rotateY(90deg);
+        width: 300px;
+        height: 150px;
+        top: 0;
+        left: -300px; }
+      .bill.rectangle.high:after {
+        transform-origin: top;
+        transform: rotateX(90deg);
+        width: 80px;
+        height: 300px;
+        bottom: -300px;
+        left: 0; }
+    .bill.rectangle.middle {
+      transform: translateZ(-200px); }
+      .bill.rectangle.middle:before {
+        transform-origin: top right;
+        transform: rotateY(90deg);
+        width: 200px;
+        height: 150px;
+        top: 0;
+        left: -200px; }
+      .bill.rectangle.middle:after {
+        transform-origin: top;
+        transform: rotateX(90deg);
+        width: 80px;
+        height: 200px;
+        bottom: -200px;
+        left: 0; }
+    .bill.rectangle.low {
+      transform: translateZ(-100px); }
+      .bill.rectangle.low:before {
+        transform-origin: top right;
+        transform: rotateY(90deg);
+        width: 100px;
+        height: 150px;
+        top: 0;
+        left: -100px; }
+      .bill.rectangle.low:after {
+        transform-origin: top;
+        transform: rotateX(90deg);
+        width: 80px;
+        height: 100px;
+        bottom: -100px;
+        left: 0; }
+  .bill.thin {
+    margin-left: 75px;
+    margin-top: 75px;
+    width: 50px;
+    height: 50px; }
+    .bill.thin:before {
+      transform-origin: top right;
+      transform: rotateY(90deg);
+      width: 200px;
+      height: 50px;
+      top: 0;
+      left: -200px; }
+    .bill.thin:after {
+      transform-origin: top;
+      transform: rotateX(90deg);
+      width: 50px;
+      height: 200px;
+      bottom: -200px;
+      left: 0; }
+    .bill.thin.high {
+      transform: translateZ(-300px); }
+      .bill.thin.high:before {
+        transform-origin: top right;
+        transform: rotateY(90deg);
+        width: 300px;
+        height: 50px;
+        top: 0;
+        left: -300px; }
+      .bill.thin.high:after {
+        transform-origin: top;
+        transform: rotateX(90deg);
+        width: 50px;
+        height: 300px;
+        bottom: -300px;
+        left: 0; }
+    .bill.thin.middle {
+      transform: translateZ(-200px); }
+      .bill.thin.middle:before {
+        transform-origin: top right;
+        transform: rotateY(90deg);
+        width: 200px;
+        height: 50px;
+        top: 0;
+        left: -200px; }
+      .bill.thin.middle:after {
+        transform-origin: top;
+        transform: rotateX(90deg);
+        width: 50px;
+        height: 200px;
+        bottom: -200px;
+        left: 0; }
+    .bill.thin.low {
+      transform: translateZ(-100px); }
+      .bill.thin.low:before {
+        transform-origin: top right;
+        transform: rotateY(90deg);
+        width: 100px;
+        height: 50px;
+        top: 0;
+        left: -100px; }
+      .bill.thin.low:after {
+        transform-origin: top;
+        transform: rotateX(90deg);
+        width: 50px;
+        height: 100px;
+        bottom: -100px;
+        left: 0; }
+    .bill.thin + .thin {
+      margin-left: 25px;
+      margin-top: 100px; }
   .bill.brown {
     background-color: #f4e8d8;
     box-shadow: 15px 15px 0 0 #faf4ec inset, -15px -15px 0 0 #faf4ec inset, 0 0 15px 15px rgba(204, 204, 204, 0.3) inset; }
@@ -412,256 +581,256 @@
   to {
     left: 100%; } }
 .avenue:nth-of-type(1) .car.run:nth-of-type(1) {
-  animation-duration: 18s;
-  animation-delay: 2s; }
+  animation-duration: 12s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(2) {
-  animation-duration: 20s;
+  animation-duration: 22s;
   animation-delay: 3s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(3) {
-  animation-duration: 24s;
-  animation-delay: 3s; }
+  animation-duration: 16s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(4) {
-  animation-duration: 28s;
+  animation-duration: 22s;
   animation-delay: 1s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(5) {
-  animation-duration: 10s;
-  animation-delay: 3s; }
+  animation-duration: 20s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(6) {
-  animation-duration: 10s;
+  animation-duration: 26s;
   animation-delay: 1s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(7) {
   animation-duration: 18s;
-  animation-delay: 3s; }
+  animation-delay: 1s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(8) {
-  animation-duration: 18s;
-  animation-delay: 2s; }
+  animation-duration: 20s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(9) {
-  animation-duration: 28s;
+  animation-duration: 16s;
   animation-delay: 2s; }
 .avenue:nth-of-type(1) .car.run:nth-of-type(10) {
-  animation-duration: 26s;
-  animation-delay: 1s; }
+  animation-duration: 10s;
+  animation-delay: 2s; }
 
 .avenue:nth-of-type(2) .car.run:nth-of-type(1) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(2) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(3) {
+  animation-duration: 24s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(4) {
+  animation-duration: 20s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(2) .car.run:nth-of-type(5) {
   animation-duration: 26s;
   animation-delay: 1s; }
-.avenue:nth-of-type(2) .car.run:nth-of-type(2) {
-  animation-duration: 24s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(2) .car.run:nth-of-type(3) {
-  animation-duration: 16s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(2) .car.run:nth-of-type(4) {
-  animation-duration: 12s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(2) .car.run:nth-of-type(5) {
-  animation-duration: 12s;
-  animation-delay: 1s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(6) {
-  animation-duration: 14s;
+  animation-duration: 22s;
   animation-delay: 1s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(7) {
-  animation-duration: 22s;
-  animation-delay: 2s; }
+  animation-duration: 16s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(8) {
-  animation-duration: 20s;
-  animation-delay: 1s; }
+  animation-duration: 28s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(9) {
-  animation-duration: 12s;
-  animation-delay: 1s; }
+  animation-duration: 18s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(2) .car.run:nth-of-type(10) {
-  animation-duration: 22s;
+  animation-duration: 28s;
   animation-delay: 2s; }
 
 .avenue:nth-of-type(3) .car.run:nth-of-type(1) {
-  animation-duration: 12s;
+  animation-duration: 28s;
   animation-delay: 3s; }
 .avenue:nth-of-type(3) .car.run:nth-of-type(2) {
-  animation-duration: 16s;
-  animation-delay: 3s; }
+  animation-duration: 22s;
+  animation-delay: 1s; }
 .avenue:nth-of-type(3) .car.run:nth-of-type(3) {
-  animation-duration: 18s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(4) {
-  animation-duration: 10s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(5) {
-  animation-duration: 16s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(6) {
   animation-duration: 26s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(7) {
-  animation-duration: 18s;
   animation-delay: 1s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(8) {
-  animation-duration: 14s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(9) {
-  animation-duration: 10s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(3) .car.run:nth-of-type(10) {
-  animation-duration: 24s;
-  animation-delay: 1s; }
-
-.avenue:nth-of-type(4) .car.run:nth-of-type(1) {
-  animation-duration: 16s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(2) {
-  animation-duration: 14s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(3) {
-  animation-duration: 28s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(4) {
-  animation-duration: 10s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(5) {
-  animation-duration: 18s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(6) {
-  animation-duration: 16s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(7) {
-  animation-duration: 24s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(8) {
-  animation-duration: 12s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(9) {
+.avenue:nth-of-type(3) .car.run:nth-of-type(4) {
   animation-duration: 20s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(4) .car.run:nth-of-type(10) {
-  animation-duration: 28s;
-  animation-delay: 1s; }
-
-.avenue:nth-of-type(5) .car.run:nth-of-type(1) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(2) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(3) {
+  animation-delay: 3s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(5) {
   animation-duration: 22s;
   animation-delay: 2s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(4) {
-  animation-duration: 16s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(5) {
-  animation-duration: 20s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(6) {
-  animation-duration: 28s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(7) {
-  animation-duration: 20s;
+.avenue:nth-of-type(3) .car.run:nth-of-type(6) {
+  animation-duration: 22s;
   animation-delay: 1s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(8) {
+.avenue:nth-of-type(3) .car.run:nth-of-type(7) {
+  animation-duration: 16s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(8) {
   animation-duration: 10s;
   animation-delay: 1s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(9) {
-  animation-duration: 26s;
+.avenue:nth-of-type(3) .car.run:nth-of-type(9) {
+  animation-duration: 10s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(3) .car.run:nth-of-type(10) {
+  animation-duration: 18s;
+  animation-delay: 3s; }
+
+.avenue:nth-of-type(4) .car.run:nth-of-type(1) {
+  animation-duration: 12s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(2) {
+  animation-duration: 10s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(3) {
+  animation-duration: 22s;
   animation-delay: 2s; }
-.avenue:nth-of-type(5) .car.run:nth-of-type(10) {
-  animation-duration: 26s;
+.avenue:nth-of-type(4) .car.run:nth-of-type(4) {
+  animation-duration: 18s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(5) {
+  animation-duration: 12s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(6) {
+  animation-duration: 14s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(7) {
+  animation-duration: 20s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(8) {
+  animation-duration: 10s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(9) {
+  animation-duration: 24s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(4) .car.run:nth-of-type(10) {
+  animation-duration: 16s;
   animation-delay: 2s; }
 
-.avenue:nth-of-type(6) .car.run:nth-of-type(1) {
-  animation-duration: 10s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(6) .car.run:nth-of-type(2) {
-  animation-duration: 24s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(6) .car.run:nth-of-type(3) {
-  animation-duration: 10s;
+.avenue:nth-of-type(5) .car.run:nth-of-type(1) {
+  animation-duration: 12s;
   animation-delay: 2s; }
-.avenue:nth-of-type(6) .car.run:nth-of-type(4) {
-  animation-duration: 18s;
+.avenue:nth-of-type(5) .car.run:nth-of-type(2) {
+  animation-duration: 26s;
   animation-delay: 1s; }
-.avenue:nth-of-type(6) .car.run:nth-of-type(5) {
-  animation-duration: 20s;
+.avenue:nth-of-type(5) .car.run:nth-of-type(3) {
+  animation-duration: 24s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(4) {
+  animation-duration: 12s;
   animation-delay: 3s; }
-.avenue:nth-of-type(6) .car.run:nth-of-type(6) {
+.avenue:nth-of-type(5) .car.run:nth-of-type(5) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(6) {
+  animation-duration: 10s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(7) {
   animation-duration: 28s;
   animation-delay: 2s; }
-.avenue:nth-of-type(6) .car.run:nth-of-type(7) {
-  animation-duration: 14s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(6) .car.run:nth-of-type(8) {
-  animation-duration: 10s;
+.avenue:nth-of-type(5) .car.run:nth-of-type(8) {
+  animation-duration: 28s;
   animation-delay: 1s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(9) {
+  animation-duration: 18s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(5) .car.run:nth-of-type(10) {
+  animation-duration: 22s;
+  animation-delay: 3s; }
+
+.avenue:nth-of-type(6) .car.run:nth-of-type(1) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(2) {
+  animation-duration: 28s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(3) {
+  animation-duration: 26s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(4) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(5) {
+  animation-duration: 24s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(6) {
+  animation-duration: 10s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(7) {
+  animation-duration: 10s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(6) .car.run:nth-of-type(8) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(9) {
   animation-duration: 18s;
   animation-delay: 2s; }
 .avenue:nth-of-type(6) .car.run:nth-of-type(10) {
-  animation-duration: 12s;
-  animation-delay: 1s; }
+  animation-duration: 10s;
+  animation-delay: 2s; }
 
 .avenue:nth-of-type(7) .car.run:nth-of-type(1) {
-  animation-duration: 22s;
+  animation-duration: 14s;
   animation-delay: 3s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(2) {
+  animation-duration: 18s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(3) {
   animation-duration: 24s;
   animation-delay: 2s; }
-.avenue:nth-of-type(7) .car.run:nth-of-type(3) {
-  animation-duration: 18s;
-  animation-delay: 3s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(4) {
-  animation-duration: 12s;
-  animation-delay: 3s; }
+  animation-duration: 14s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(5) {
-  animation-duration: 20s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(7) .car.run:nth-of-type(6) {
-  animation-duration: 20s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(7) .car.run:nth-of-type(7) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(7) .car.run:nth-of-type(8) {
   animation-duration: 26s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(6) {
+  animation-duration: 18s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(7) {
+  animation-duration: 26s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(8) {
+  animation-duration: 20s;
   animation-delay: 3s; }
 .avenue:nth-of-type(7) .car.run:nth-of-type(9) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(7) .car.run:nth-of-type(10) {
   animation-duration: 20s;
   animation-delay: 2s; }
-.avenue:nth-of-type(7) .car.run:nth-of-type(10) {
-  animation-duration: 12s;
-  animation-delay: 3s; }
 
 .avenue:nth-of-type(8) .car.run:nth-of-type(1) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
+  animation-duration: 28s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(2) {
-  animation-duration: 16s;
+  animation-duration: 26s;
   animation-delay: 1s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(3) {
-  animation-duration: 28s;
+  animation-duration: 16s;
   animation-delay: 2s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(4) {
-  animation-duration: 12s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(8) .car.run:nth-of-type(5) {
-  animation-duration: 10s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(8) .car.run:nth-of-type(6) {
-  animation-duration: 26s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(8) .car.run:nth-of-type(7) {
-  animation-duration: 28s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(8) .car.run:nth-of-type(8) {
   animation-duration: 18s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(5) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(6) {
+  animation-duration: 16s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(7) {
+  animation-duration: 12s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(8) .car.run:nth-of-type(8) {
+  animation-duration: 16s;
   animation-delay: 3s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(9) {
-  animation-duration: 20s;
-  animation-delay: 1s; }
+  animation-duration: 22s;
+  animation-delay: 2s; }
 .avenue:nth-of-type(8) .car.run:nth-of-type(10) {
-  animation-duration: 10s;
-  animation-delay: 3s; }
+  animation-duration: 20s;
+  animation-delay: 2s; }
 
 .avenue:nth-of-type(9) .car.run:nth-of-type(1) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
+  animation-duration: 12s;
+  animation-delay: 3s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(2) {
   animation-duration: 22s;
   animation-delay: 2s; }
@@ -669,92 +838,61 @@
   animation-duration: 28s;
   animation-delay: 1s; }
 .avenue:nth-of-type(9) .car.run:nth-of-type(4) {
-  animation-duration: 18s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(9) .car.run:nth-of-type(5) {
-  animation-duration: 24s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(9) .car.run:nth-of-type(6) {
-  animation-duration: 16s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(9) .car.run:nth-of-type(7) {
-  animation-duration: 24s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(9) .car.run:nth-of-type(8) {
-  animation-duration: 22s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(9) .car.run:nth-of-type(9) {
-  animation-duration: 24s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(9) .car.run:nth-of-type(10) {
-  animation-duration: 16s;
-  animation-delay: 3s; }
-
-.avenue:nth-of-type(10) .car.run:nth-of-type(1) {
-  animation-duration: 20s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(2) {
-  animation-duration: 12s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(3) {
-  animation-duration: 20s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(4) {
-  animation-duration: 20s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(5) {
-  animation-duration: 24s;
-  animation-delay: 1s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(6) {
-  animation-duration: 22s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(7) {
-  animation-duration: 14s;
-  animation-delay: 3s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(8) {
-  animation-duration: 22s;
-  animation-delay: 2s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(9) {
   animation-duration: 10s;
   animation-delay: 2s; }
-.avenue:nth-of-type(10) .car.run:nth-of-type(10) {
+.avenue:nth-of-type(9) .car.run:nth-of-type(5) {
+  animation-duration: 12s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(6) {
+  animation-duration: 28s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(7) {
+  animation-duration: 10s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(8) {
+  animation-duration: 12s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(9) {
   animation-duration: 18s;
   animation-delay: 3s; }
+.avenue:nth-of-type(9) .car.run:nth-of-type(10) {
+  animation-duration: 22s;
+  animation-delay: 1s; }
+
+.avenue:nth-of-type(10) .car.run:nth-of-type(1) {
+  animation-duration: 24s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(2) {
+  animation-duration: 24s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(3) {
+  animation-duration: 22s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(4) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(5) {
+  animation-duration: 22s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(6) {
+  animation-duration: 20s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(7) {
+  animation-duration: 26s;
+  animation-delay: 3s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(8) {
+  animation-duration: 24s;
+  animation-delay: 1s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(9) {
+  animation-duration: 14s;
+  animation-delay: 2s; }
+.avenue:nth-of-type(10) .car.run:nth-of-type(10) {
+  animation-duration: 14s;
+  animation-delay: 1s; }
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0; }
-
-body {
-  background: linear-gradient(to bottom, #BEE1E5, white); }
-
-.city {
-  perspective: 100000px;
-  perspective-origin: top left;
-  transform-style: preserve-3d;
-  transform: rotateX(-65deg) rotateY(0deg) rotateZ(-45deg); }
-
-/*
-.busStop {
-  position: relative;
-  left: 30px;
-  top: 30px;
-  width: 20px;
-  height: 10px;
-  background-color: red;
-  transform: skew(-45deg);
-
-  &:after {
-    content: "";
-    position: absolute;
-    left: -10px;
-    width: 10px;
-    height: 10px;
-    background-color: blue;
-    transform: skewY(55deg);
-  }
-}
-*/
 
 /*# sourceMappingURL=style.css.map */

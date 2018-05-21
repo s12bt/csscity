@@ -9,11 +9,11 @@
   $billShadowColor: darken($billStandardColor, 1%);
 
   position: absolute;
-  margin-left: ($squareSize - $billStandardSize)/2;
-  margin-top:  ($squareSize - $billStandardSize)/2;
+  margin-left: ($landWide - $billStandardWide)/2;
+  margin-top:  ($landLength - $billStandardLength)/2;
 
-  width: $billStandardSize;
-  height: $billStandardSize;
+  width: $billStandardWide;
+  height: $billStandardLength;
   transform: translateZ(-$billMediumHeight);
   background-color: $billTopColor;
 
@@ -22,31 +22,92 @@
 
   &:before {
     @include pseudoElementBase;
-    @include leftBend90deg($billMediumHeight, $billStandardSize);
+    @include leftBend90deg($billMediumHeight, $billStandardLength);
     @include windowRectangle4x5LeftSide($billBaseColor);
     background-color: $billBaseColor;
   }
 
+
   &:after {
     @include pseudoElementBase;
-    @include bottomBend90deg($billStandardSize, $billMediumHeight);
+    @include bottomBend90deg($billStandardWide, $billMediumHeight);
     @include windowRectangle4x5BottomSide($billShadowColor);
     background-color: $billShadowColor;
   }
 
-
   /* height variation */
   &.high {
-    @include billHeightBase($billStandardSize, $billHighHeight);
+    @include billHeightBase($billStandardWide, $billStandardLength, $billHighHeight);
   }
 
   &.middle {
-    @include billHeightBase($billStandardSize, $billMediumHeight);
+    @include billHeightBase($billStandardWide, $billStandardLength, $billMediumHeight);
   }
 
   &.low {
-    @include billHeightBase($billStandardSize, $billLowHeight);
+    @include billHeightBase($billStandardWide, $billStandardLength, $billLowHeight);
   }
+
+  /* shape variation */
+  &.rectangle {
+    margin-left: ($landWide - $billRectangleWide)/2;
+    margin-top:  ($landLength - $billRectangleLength)/2;
+    width: $billRectangleWide;
+    height: $billRectangleLength;
+
+    &:before {
+      @include leftBend90deg($billMediumHeight, $billRectangleLength);
+    }
+
+    &:after {
+      @include bottomBend90deg($billRectangleWide, $billMediumHeight);
+    }
+
+    &.high {
+      @include billHeightBase($billRectangleWide, $billRectangleLength, $billHighHeight);
+    }
+
+    &.middle {
+      @include billHeightBase($billRectangleWide, $billRectangleLength, $billMediumHeight);
+    }
+
+    &.low {
+      @include billHeightBase($billRectangleWide, $billRectangleLength, $billLowHeight);
+    }
+  }
+
+  &.thin {
+    margin-left: ($landWide - $billThinWide)/2;
+    margin-top:  ($landLength - $billThinLength)/2;
+    width: $billThinWide;
+    height: $billThinLength;
+
+    &:before {
+      @include leftBend90deg($billMediumHeight, $billThinLength);
+    }
+
+    &:after {
+      @include bottomBend90deg($billThinWide, $billMediumHeight);
+    }
+
+    &.high {
+      @include billHeightBase($billThinWide, $billThinLength, $billHighHeight);
+    }
+
+    &.middle {
+      @include billHeightBase($billThinWide, $billThinLength, $billMediumHeight);
+    }
+
+    &.low {
+      @include billHeightBase($billThinWide, $billThinLength, $billLowHeight);
+    }
+
+    + .thin {
+      margin-left: $billThinWide * 0.5;
+      margin-top:  $billThinLength * 2;
+    }
+  }
+
 
   /* color & window variation */
   &.brown {

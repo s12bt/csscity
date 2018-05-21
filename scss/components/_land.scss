@@ -1,48 +1,24 @@
 /*----------------
   land
 */
-
-.area {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row-reverse;
-}
-
-.block {
-  flex-shrink: 0;
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  max-width: $squareSize * 2;
-
-  @for $i from 1 through 10 {
-    &.wide#{$i} {
-      max-width: $squareSize * $i;
-    }
-  }
-}
-
 .address {
   flex-shrink: 0;
 
   position: relative;
   z-index: layer-get("ground" "flat");
-  width: $squareSize;
-  height: $squareSize;
+  width: $landWide;
+  height: $landLength;
   background-color: $grassColor;
 
   &:before {
     @include pseudoElementBase;
-    @include leftBend90deg($squareDepth, $squareSize);
-    z-index: layer-get("ground" "depth");
+    @include leftBend90deg($landDepth, $landLength);
     background-color: darken($grassColor, 10%);
   }
 
   &:after {
     @include pseudoElementBase;
-    @include bottomBend90deg($squareSize, $squareDepth);
-    z-index: layer-get("ground" "depth");
+    @include bottomBend90deg($landWide, $landDepth);
     background-color: darken($grassColor, 15%);
   }
 }

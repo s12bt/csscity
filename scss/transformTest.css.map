@@ -1,7 +1,0 @@
-{
-"version": 3,
-"mappings": "AAAA,KAAM;EACJ,MAAM,EAAE,GAAG;EACX,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,gBAAgB,EAAE,GAAG;EACrB,KAAK,EAAE,IAAI;;AAGb,KAAM;EACJ,gBAAgB,EAAE,IAAI;;AAGxB,OAAQ;EACN,gBAAgB,EAAE,KAAK",
-"sources": ["transformTest.scss"],
-"names": [],
-"file": "transformTest.css"
-}

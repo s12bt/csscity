@@ -1,6 +1,7 @@
 @import "variables";
 @import "mixin";
 @import "layers";
+@import "cityPlanning";
 @import "components/sky";
 @import "components/land";
 @import "components/road";
@@ -16,39 +17,5 @@
 
 
 body {
-  background: linear-gradient(to bottom, $skyColor, lighten($skyColor, 100%));
+  //background: linear-gradient(to bottom, $skyColor, lighten($skyColor, 100%));
 }
-
-
-.city {
-  perspective: 100000px;
-  perspective-origin: top left;
-  transform-style: preserve-3d;
-  transform: rotateX(-65deg) rotateY(0deg) rotateZ(-45deg);
-}
-
-/*
-.busStop {
-  position: relative;
-  left: 30px;
-  top: 30px;
-  width: 20px;
-  height: 10px;
-  background-color: red;
-  transform: skew(-45deg);
-
-  &:after {
-    content: "";
-    position: absolute;
-    left: -10px;
-    width: 10px;
-    height: 10px;
-    background-color: blue;
-    transform: skewY(55deg);
-  }
-}
-*/
-
-
-
-
