@@ -14,11 +14,9 @@
 
   width: $billStandardWide;
   height: $billStandardLength;
-  transform: translateZ(-$billMediumHeight);
-  background-color: $billTopColor;
-
-  // Pseudo element needs 3d transform
+  transform: translateZ($billMediumHeight);
   transform-style: preserve-3d;
+  background-color: $billTopColor;
 
   &:before {
     @include pseudoElementBase;
@@ -26,7 +24,6 @@
     @include windowRectangle4x5LeftSide($billBaseColor);
     background-color: $billBaseColor;
   }
-
 
   &:after {
     @include pseudoElementBase;

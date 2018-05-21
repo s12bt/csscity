@@ -6,12 +6,10 @@
   position: relative;
   width: 50px;
   height: 50px;
-  z-index: layer-get("tree" "base");
 
   &:before {
     content: "";
     position: absolute;
-    z-index: layer-get("tree" "trunk");
     width: 10px;
     height: 30px;
     background-image: linear-gradient(to right top, #8D7A5A, #8D7A5A 10%, #9B8963);
@@ -24,7 +22,6 @@
   &:after {
     content: "";
     position: absolute;
-    z-index: layer-get("tree" "leaves");
     transform: skewX(-45deg);
   }
 

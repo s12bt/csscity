@@ -3,7 +3,6 @@
  */
 .street {
   position: relative;
-  z-index: layer-get("street");
   flex-shrink: 0;
   width: $streetWidth;
    height: $squareSize * 2;

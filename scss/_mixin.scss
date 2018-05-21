@@ -5,7 +5,7 @@
 
 @mixin leftBend90deg($width: 0, $height: 0) {
   transform-origin: top right;
-  transform: rotateY(90deg);
+  transform: rotateY(-90deg);
   width: $width;
   height: $height;
   top: 0;
@@ -14,7 +14,7 @@
 
 @mixin bottomBend90deg($width: 0, $height: 0) {
   transform-origin: top;
-  transform: rotateX(90deg);
+  transform: rotateX(-90deg);
   width: $width;
   height: $height;
   bottom: -($height);
@@ -26,7 +26,7 @@
  */
 // height
 @mixin billHeightBase($wide, $length, $height) {
-  transform: translateZ(-$height);
+  transform: translateZ($height);
 
   &:before {
     @include leftBend90deg($height, $length);

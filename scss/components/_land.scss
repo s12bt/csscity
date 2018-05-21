@@ -5,10 +5,11 @@
   flex-shrink: 0;
 
   position: relative;
-  z-index: layer-get("ground" "flat");
   width: $landWide;
   height: $landLength;
   background-color: $grassColor;
+  transform: translateZ(10px);
+  transform-style: preserve-3d;
 
   &:before {
     @include pseudoElementBase;
