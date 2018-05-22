@@ -114,9 +114,12 @@
     $bllWindowColor:  #C6B09D;
 
     background-color: $billTopColor;
-    box-shadow: 15px 15px 0 0 lighten($billTopColor, 5%) inset,
-                -15px -15px 0 0 lighten($billTopColor, 5%) inset,
-                0 0 15px 15px transparentize(#CCC, 1-0.3) inset;
+
+    $wide: $billStandardSize * 0.15;
+    box-shadow: $wide $wide 0 0 lighten($billTopColor, 5%) inset,
+                (-$wide) (-$wide) 0 0 lighten($billTopColor, 5%) inset,
+                0 0 $wide $wide transparentize(#CCC, 1-0.3) inset;
+
 
     &:before {
       @include windowWiderLeftSide($billBaseColor, $bllWindowColor);
@@ -128,6 +131,7 @@
   }
 
   &.white {}
+
 
   &.gray {}
 

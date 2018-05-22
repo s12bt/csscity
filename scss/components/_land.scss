@@ -8,7 +8,7 @@
   width: $landWide;
   height: $landLength;
   background-color: $grassColor;
-  transform: translateZ(10px);
+  transform: translateZ($landDepth);
   transform-style: preserve-3d;
 
   &:before {

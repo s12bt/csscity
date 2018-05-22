@@ -54,17 +54,18 @@
       $surfaceColor 83%, $surfaceColor
     ),
     repeating-linear-gradient(to left,
-      $surfaceColor,      $surfaceColor 15px,
-      $windowColor  15px, $windowColor  30px,
-      $surfaceColor 30px, $surfaceColor 35px,
-      $windowColor  35px, $windowColor  50px,
-      $surfaceColor 50px, $surfaceColor 55px,
-      $windowColor  55px, $windowColor  70px,
-      $surfaceColor 70px, $surfaceColor 75px,
-      $windowColor  75px, $windowColor  90px,
-      $surfaceColor 90px, $surfaceColor 100px
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.15,
+      $windowColor  $billStandardSize*0.15, $windowColor  $billStandardSize*0.30,
+      $surfaceColor $billStandardSize*0.30, $surfaceColor $billStandardSize*0.35,
+      $windowColor  $billStandardSize*0.35, $windowColor  $billStandardSize*0.50,
+      $surfaceColor $billStandardSize*0.50, $surfaceColor $billStandardSize*0.55,
+      $windowColor  $billStandardSize*0.55, $windowColor  $billStandardSize*0.70,
+      $surfaceColor $billStandardSize*0.70, $surfaceColor $billStandardSize*0.75,
+      $windowColor  $billStandardSize*0.75, $windowColor  $billStandardSize*0.90,
+      $surfaceColor $billStandardSize*0.90, $surfaceColor $billStandardSize*1.00
     );
 }
+
 
 
 @mixin windowRectangle4x5BottomSide($surfaceColor, $windowColor: #7292AB) {
@@ -83,15 +84,15 @@
       $surfaceColor 83%, $surfaceColor
     ),
     repeating-linear-gradient(to bottom,
-      $surfaceColor,      $surfaceColor 15px,
-      $windowColor  15px, $windowColor  30px,
-      $surfaceColor 30px, $surfaceColor 35px,
-      $windowColor  35px, $windowColor  50px,
-      $surfaceColor 50px, $surfaceColor 55px,
-      $windowColor  55px, $windowColor  70px,
-      $surfaceColor 70px, $surfaceColor 75px,
-      $windowColor  75px, $windowColor  90px,
-      $surfaceColor 90px, $surfaceColor 100px
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.15,
+      $windowColor  $billStandardSize*0.15, $windowColor  $billStandardSize*0.30,
+      $surfaceColor $billStandardSize*0.30, $surfaceColor $billStandardSize*0.35,
+      $windowColor  $billStandardSize*0.35, $windowColor  $billStandardSize*0.50,
+      $surfaceColor $billStandardSize*0.50, $surfaceColor $billStandardSize*0.55,
+      $windowColor  $billStandardSize*0.55, $windowColor  $billStandardSize*0.70,
+      $surfaceColor $billStandardSize*0.70, $surfaceColor $billStandardSize*0.75,
+      $windowColor  $billStandardSize*0.75, $windowColor  $billStandardSize*0.90,
+      $surfaceColor $billStandardSize*0.90, $surfaceColor $billStandardSize*1.00
     );
 }
 
@@ -103,17 +104,19 @@
       $surfaceColor 90%, $surfaceColor
     ),
     repeating-linear-gradient(to left,
-      $surfaceColor,      $surfaceColor  8px,
-      $windowColor   8px, $windowColor  16px,
-      $surfaceColor 16px, $surfaceColor 18px,
-      $windowColor  18px, $windowColor  24px,
-      $surfaceColor 24px, $surfaceColor 26px,
-      $windowColor  26px, $windowColor  34px,
-      $surfaceColor 34px, $surfaceColor 36px,
-      $windowColor  36px, $windowColor  44px,
-      $surfaceColor 44px, $surfaceColor 50px
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.08,
+      $windowColor  $billStandardSize*0.08, $windowColor  $billStandardSize*0.16,
+      $surfaceColor $billStandardSize*0.16, $surfaceColor $billStandardSize*0.18,
+      $windowColor  $billStandardSize*0.18, $windowColor  $billStandardSize*0.24,
+      $surfaceColor $billStandardSize*0.24, $surfaceColor $billStandardSize*0.26,
+      $windowColor  $billStandardSize*0.26, $windowColor  $billStandardSize*0.34,
+      $surfaceColor $billStandardSize*0.34, $surfaceColor $billStandardSize*0.36,
+      $windowColor  $billStandardSize*0.36, $windowColor  $billStandardSize*0.44,
+      $surfaceColor $billStandardSize*0.44, $surfaceColor $billStandardSize*0.50
     );
 }
+
+
 
 @mixin windowWiderBottomSide($surfaceColor, $windowColor: #7292AB) {
   background-image:
@@ -123,15 +126,15 @@
       $surfaceColor 90%, $surfaceColor
     ),
     repeating-linear-gradient(to bottom,
-      $surfaceColor,      $surfaceColor  8px,
-      $windowColor   8px, $windowColor  16px,
-      $surfaceColor 16px, $surfaceColor 18px,
-      $windowColor  18px, $windowColor  24px,
-      $surfaceColor 24px, $surfaceColor 26px,
-      $windowColor  26px, $windowColor  34px,
-      $surfaceColor 34px, $surfaceColor 36px,
-      $windowColor  36px, $windowColor  44px,
-      $surfaceColor 44px, $surfaceColor 50px
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.08,
+      $windowColor  $billStandardSize*0.08, $windowColor  $billStandardSize*0.16,
+      $surfaceColor $billStandardSize*0.16, $surfaceColor $billStandardSize*0.18,
+      $windowColor  $billStandardSize*0.18, $windowColor  $billStandardSize*0.24,
+      $surfaceColor $billStandardSize*0.24, $surfaceColor $billStandardSize*0.26,
+      $windowColor  $billStandardSize*0.26, $windowColor  $billStandardSize*0.34,
+      $surfaceColor $billStandardSize*0.34, $surfaceColor $billStandardSize*0.36,
+      $windowColor  $billStandardSize*0.36, $windowColor  $billStandardSize*0.44,
+      $surfaceColor $billStandardSize*0.44, $surfaceColor $billStandardSize*0.50
     );
 }
 

@@ -3,39 +3,37 @@
  */
 $squareSize: 200px;
 
-
 /* -------------------------------
-  City Planning
+  Land
  */
 $landBasis:  $squareSize;
 $landWide:   $landBasis;
 $landLength: $landBasis;
-
-$streetWidth: $squareSize * 0.5;
-$avenueWidth: $squareSize * 1;
-
-$block1: $landBasis * 1;
-$block2: $landBasis * 2;
+$landDepth:  10px;
 
 /* -------------------------------
-  Land
+  Road
  */
-$landDepth: 10px;
+$streetWidth: $squareSize * 0.5;
+$avenueWidth: $squareSize * 1;
+$roadDepth:  5px;
+$roadAsphaltColor: #8D9192;
+$roadLineColor: #E4EAEC;
 
 
 /* -------------------------------
   bill
  */
 // area
-$billStandardWide:   $landBasis * 0.5;
-$billStandardLength: $billStandardWide;
-$billRectangleWide:  $landBasis * 0.4;
+$billStandardWide:    $landBasis * 0.5;
+$billStandardLength:  $billStandardWide;
+$billRectangleWide:   $landBasis * 0.4;
 $billRectangleLength: $landBasis * 0.75;
-$billThinWide:   $landBasis * 0.25;
-$billThinLength: $billThinWide;
+$billThinWide:        $landBasis * 0.25;
+$billThinLength:      $billThinWide;
 
 // height
-$billStandardSize: $landBasis/2;
+$billStandardSize: $landBasis * 0.5;
 $billLowHeight:    $billStandardSize;
 $billMediumHeight: $billLowHeight * 2; // must integer
 $billHighHeight:   $billLowHeight * 3; // must integer
@@ -57,5 +55,4 @@ $skyColor: #BEE1E5;
 $cloudColor: #FFF;
 $grassColor: #8CB836;
 
-$streetBaseColor: #8D9192;
-$streetLineColor: #FFF;
+
