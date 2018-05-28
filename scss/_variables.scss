@@ -6,17 +6,21 @@ $squareSize: 200px;
 /* -------------------------------
   Land
  */
+$cityDepth: 30px;
+$cityGroundColor: #D6B386;
+
+$landDepth:  15px;
 $landBasis:  $squareSize;
 $landWide:   $landBasis;
 $landLength: $landBasis;
-$landDepth:  10px;
+
 
 /* -------------------------------
   Road
  */
+$roadDepth:  10px;
 $streetWidth: $squareSize * 0.5;
 $avenueWidth: $squareSize * 1;
-$roadDepth:  5px;
 $roadAsphaltColor: #8D9192;
 $roadLineColor: #E4EAEC;
 
