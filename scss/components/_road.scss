@@ -3,64 +3,90 @@
  */
 .street {
   position: relative;
-  top: $squareDepth;
-  left: -$squareDepth;
-  z-index: layer-get("street");
   flex-shrink: 0;
   width: $streetWidth;
 
   background-image:
     linear-gradient(to  bottom,
-      $streetBaseColor,
-      $streetBaseColor 20px,
+      $roadAsphaltColor,
+      $roadAsphaltColor 20px,
       transparent 20px,
       transparent 80px,
-      $streetBaseColor 80px,
-      $streetBaseColor
+      $roadAsphaltColor 80px,
+      $roadAsphaltColor
     ),
     linear-gradient(to right,
-      $streetBaseColor,
-      $streetBaseColor 48%,
-      $streetLineColor 48%,
-      $streetLineColor 52%,
-      $streetBaseColor 52%,
-      $streetBaseColor
+      $roadAsphaltColor,
+      $roadAsphaltColor 49%,
+      $roadLineColor 49%,
+      $roadLineColor 51%,
+      $roadAsphaltColor 51%,
+      $roadAsphaltColor
     );
-  background-size: 100px 100px, 100px 100px;
+  background-size: $streetWidth $streetWidth, $streetWidth $streetWidth;
   background-repeat: repeat-y;
+
+  transform: translateZ($roadDepth);
+  transform-style: preserve-3d;
+
+  &:before {
+    @include pseudoElementBase;
+    @include leftBend90deg($roadDepth, 100%);
+    background-color: darken($roadAsphaltColor, 10%);
+  }
+
+  &:after {
+    @include pseudoElementBase;
+    @include bottomBend90deg(100%, $roadDepth);
+    background-color: darken($roadAsphaltColor, 12%);
+  }
 }
 
 .avenue {
   position: relative;
-  padding: 5px 0;
-  right: $squareDepth;
   width: 100%;
-  height: 100px;
-  margin-top: 10px;
+  height: $avenueWidth;
 
   background-image:
     linear-gradient(to bottom,
-      $streetBaseColor,
-      $streetBaseColor 48%,
+      transparent,
       transparent 48%,
+      $roadLineColor 48%,
+      $roadLineColor 52%,
       transparent 52%,
-      $streetBaseColor 52%,
-      $streetBaseColor
+      transparent
     ),
-    repeating-linear-gradient(to right,
-      $streetLineColor,
-      $streetLineColor 40px,
-      $streetBaseColor 40px,
-      $streetBaseColor 80px,
-      $streetLineColor 80px,
-      $streetLineColor 100px
+    linear-gradient(to right,
+      $roadAsphaltColor,
+      $roadAsphaltColor 20px,
+      transparent 20px,
+      transparent 80px,
+      $roadAsphaltColor 80px,
+      $roadAsphaltColor
+    ),
+    linear-gradient(to bottom,
+      $roadAsphaltColor,
+      $roadAsphaltColor 49%,
+      $roadLineColor 49%,
+      $roadLineColor 51%,
+      $roadAsphaltColor 51%,
+      $roadAsphaltColor
     );
+  background-size: $avenueWidth $avenueWidth, $avenueWidth*0.5 $avenueWidth*0.5, $avenueWidth*0.5 $avenueWidth*0.5;
+  background-repeat: repeat;
 
-  + .area {
-    margin-top: -10px;
+  transform: translateZ($roadDepth);
+  transform-style: preserve-3d;
+
+  &:before {
+    @include pseudoElementBase;
+    @include leftBend90deg($roadDepth, 100%);
+    background-color: darken($roadAsphaltColor, 10%);
   }
 
-  + .avenue {
-    margin-top: 0;
+  &:after {
+    @include pseudoElementBase;
+    @include bottomBend90deg(100%, $roadDepth);
+    background-color: darken($roadAsphaltColor, 12%);
   }
 }

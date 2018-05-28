@@ -1,24 +1,21 @@
 .sky {
-  position: fixed;
-  z-index: layer-get("sky" "base");
+  display: none;
+  position: absolute;
   width: 100vw;
   height: 100%;
 }
 
-
 .cloud {
   transform: rotate(-6deg) skew(30deg) scale(0.8165, 0.7071);
   position: absolute;
-  z-index: layer-get("sky" "cloud");
   top: 0;
-  right: 0;
   width: 180px;
   height: 80px;
   background-color: $cloudColor;
   border-radius: 100px / 70px;
   box-shadow:
     0 5px 15px 1px transparentize(darken($skyColor, 20%), 1 - 0.2),
-    -140px 400px 20px 5px transparentize(#000, 1 - 0.1);
+    -290px 400px 20px 5px transparentize(#000, 1 - 0.1);
   opacity: 0.8;
 
   &:before {
@@ -51,7 +48,6 @@
     }
   }
 
-
   /* animation */
   &.move {
     opacity: 0;
@@ -61,7 +57,6 @@
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 
-
     @for $cloudAni from 1 through 10 {
       &:nth-of-type(#{$cloudAni}) {
         animation-duration: 30 + random(20) + s;
@@ -70,10 +65,9 @@
     }
   }
 
-
   @keyframes cloudMove {
     0% {
-      right: 0%;
+      transform: rotate(-6deg) skew(30deg) scale(0.8165, 0.7071) translateX(0);
       opacity: 0;
     }
 
@@ -82,13 +76,8 @@
     }
 
     100% {
-      right: 100%;
+      transform: rotate(-6deg) skew(30deg) scale(0.8165, 0.7071) translateX(100vw);
       opacity: 0;
     }
   }
 }
-
-
-
-
-

@@ -1,0 +1,50 @@
+.city {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  width: $landWide * 6;
+
+  /* 3d view */
+  perspective: 100000px;
+  perspective-origin: top left;
+  transform-style: preserve-3d;
+  transform: rotateX(70deg) rotateY(0deg) rotateZ(-45deg) translateX($squareSize * 2);
+
+  /* style */
+  &:before {
+    @include pseudoElementBase;
+    @include leftBend90deg($cityDepth, 100%);
+    background-color: $cityGroundColor;
+  }
+
+  &:after {
+    @include pseudoElementBase;
+    @include bottomBend90deg(100%, $cityDepth);
+    background-color: darken($cityGroundColor, 5%);
+  }
+}
+
+
+
+.block {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+  flex-wrap: wrap;
+  max-width: $landWide;
+  max-height: $landLength;
+  transform-style: preserve-3d;
+
+
+  @for $i from 1 through 10 {
+    &.wide#{$i} {
+      max-width: $landWide * $i;
+    }
+    &.length#{$i} {
+      max-height: $landLength * $i;
+    }
+  }
+}
+
+

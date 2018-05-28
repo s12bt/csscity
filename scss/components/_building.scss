@@ -3,181 +3,137 @@
  */
 
 .bill {
+  /* base */
+  $billBaseColor:   $billStandardColor;
+  $billTopColor:    lighten($billStandardColor, 1%);
+  $billShadowColor: darken($billStandardColor, 1%);
+
   position: absolute;
-  z-index: layer-get("building" "base");
-  bottom: 0;
-  left: 100px * 0.5;
-  width: 100px;
-  height: 100px;
-  transform: rotate(45deg) skewY(-45deg) scale(0.7, 1);
-  background-color: darken($billStandardColor, 20%);
+  margin-left: ($landWide - $billStandardWide)/2;
+  margin-top:  ($landLength - $billStandardLength)/2;
+
+  width: $billStandardWide;
+  height: $billStandardLength;
+  transform: translateZ($billMediumHeight);
+  transform-style: preserve-3d;
+  background-color: $billTopColor;
 
   &:before {
-    content: "";
-    position: absolute;
-    top: -115px;
-    right: 45px;
-    transform: skewX(35deg) scale(1, 1.3);
-
-    width: 100px;
-    height: 100px;
-    background-color: lighten($billStandardColor, 8%);
+    @include pseudoElementBase;
+    @include leftBend90deg($billMediumHeight, $billStandardLength);
+    @include windowRectangle4x5LeftSide($billBaseColor);
+    background-color: $billBaseColor;
   }
 
   &:after {
-    content: "";
-    position: absolute;
-    left: -100px;
-    top: -130px;
-    width: 100px;
-    height: 100px;
-    transform: skewY(55deg) translate(5px, 57px) scaleX(0.9);
-    background-color: $billStandardColor;
+    @include pseudoElementBase;
+    @include bottomBend90deg($billStandardWide, $billMediumHeight);
+    @include windowRectangle4x5BottomSide($billShadowColor);
+    background-color: $billShadowColor;
   }
 
-  /* building height */
-  @for $i from 1 through 4 {
-    $num: $i * 100;
-    &.height#{$num} {
-      left: #{$num * 0.5}px;
-      height: #{$num}px;
-      &:after {
-        height: #{$num}px;
-      }
-    }
+  /* height variation */
+  &.high {
+    @include billHeightBase($billStandardWide, $billStandardLength, $billHighHeight);
   }
 
-  /* building color */
-  // @ToDo refactor
-  &.colorWhite {
-    $billColor: $billStandardColor;
-    $billDarkColor: darken($billStandardColor, 20%);
-    $billLightColor: lighten($billStandardColor, 8%);
+  &.middle {
+    @include billHeightBase($billStandardWide, $billStandardLength, $billMediumHeight);
+  }
 
-    background-image:
-      linear-gradient(to top,
-        $billDarkColor,
-        $billDarkColor 40px,
-        transparent 40px,
-        transparent
-      ),
-      linear-gradient(to right,
-        $billDarkColor,
-        $billDarkColor 10%,
-        transparent 10%,
-        transparent 90%,
-        $billDarkColor 90%,
-        $billDarkColor
-      ),
-      repeating-linear-gradient(to bottom,
-        $billDarkColor,
-        $billDarkColor 20px,
-        $billWindowColor 20px,
-        $billWindowColor 50px,
-        $billDarkColor 50px,
-        $billDarkColor 70px
-      );
+  &.low {
+    @include billHeightBase($billStandardWide, $billStandardLength, $billLowHeight);
+  }
+
+  /* shape variation */
+  &.rectangle {
+    margin-left: ($landWide - $billRectangleWide)/2;
+    margin-top:  ($landLength - $billRectangleLength)/2;
+    width: $billRectangleWide;
+    height: $billRectangleLength;
 
     &:before {
-      background-color: $billLightColor;
+      @include leftBend90deg($billMediumHeight, $billRectangleLength);
     }
 
     &:after {
-      background-image:
-        linear-gradient(to top,
-          $billColor,
-          $billColor 40px,
-          transparent 40px,
-          transparent
-        ),
-        linear-gradient(to right,
-          $billColor,
-          $billColor 10%,
-          transparent 10%,
-          transparent 90%,
-          $billColor 90%,
-          $billColor
-        ),
+      @include bottomBend90deg($billRectangleWide, $billMediumHeight);
+    }
 
-        repeating-linear-gradient(to bottom,
-          $billColor,
-          $billColor 20px,
-          $billWindowColor 20px,
-          $billWindowColor 50px,
-          $billColor 50px,
-          $billColor 70px
-        );
+    &.high {
+      @include billHeightBase($billRectangleWide, $billRectangleLength, $billHighHeight);
+    }
+
+    &.middle {
+      @include billHeightBase($billRectangleWide, $billRectangleLength, $billMediumHeight);
+    }
+
+    &.low {
+      @include billHeightBase($billRectangleWide, $billRectangleLength, $billLowHeight);
     }
   }
 
-  &.colorBlue {
-    $billColor: $billBlueColor;
-    $billDarkColor: darken($billBlueColor, 20%);
-    $billLightColor: lighten($billBlueColor, 8%);
-
-    background-image:
-      linear-gradient(to bottom,
-        transparent,
-        transparent 90%,
-        $billDarkColor 90%,
-        $billDarkColor
-      ),
-      linear-gradient(to right,
-        $billDarkColor,
-        $billDarkColor 10%,
-        transparent 10%,
-        transparent 90%,
-        $billDarkColor 90%,
-        $billDarkColor
-      ),
-      repeating-linear-gradient(to bottom,
-        $billDarkColor,
-        $billDarkColor 20px,
-        $billWindowColor 20px,
-        $billWindowColor 50px,
-        $billDarkColor 50px,
-        $billDarkColor 70px
-      );
+  &.thin {
+    margin-left: ($landWide - $billThinWide)/2;
+    margin-top:  ($landLength - $billThinLength)/2;
+    width: $billThinWide;
+    height: $billThinLength;
 
     &:before {
-      background-color: $billLightColor;
+      @include leftBend90deg($billMediumHeight, $billThinLength);
     }
 
     &:after {
-      background-image:
-        linear-gradient(to bottom,
-          transparent,
-          transparent 90%,
-          $billColor 90%,
-          $billColor
-        ),
-        linear-gradient(to right,
-          $billColor,
-          $billColor 10%,
-          transparent 10%,
-          transparent 90%,
-          $billColor 90%,
-          $billColor
-        ),
+      @include bottomBend90deg($billThinWide, $billMediumHeight);
+    }
 
-        repeating-linear-gradient(to bottom,
-          $billColor,
-          $billColor 20px,
-          $billWindowColor 20px,
-          $billWindowColor 50px,
-          $billColor 50px,
-          $billColor 70px
-        );
+    &.high {
+      @include billHeightBase($billThinWide, $billThinLength, $billHighHeight);
+    }
+
+    &.middle {
+      @include billHeightBase($billThinWide, $billThinLength, $billMediumHeight);
+    }
+
+    &.low {
+      @include billHeightBase($billThinWide, $billThinLength, $billLowHeight);
+    }
+
+    + .thin {
+      margin-left: $billThinWide * 0.5;
+      margin-top:  $billThinLength * 2;
     }
   }
 
-  &.colorGreen {
-    background-color: darken($billGreenColor, 20%);
+
+  /* color & window variation */
+  &.brown {
+    $billBaseColor:   $billBrownColor;
+    $billTopColor:    lighten($billBrownColor, 1%);
+    $billShadowColor: darken($billBrownColor, 1%);
+    $bllWindowColor:  #C6B09D;
+
+    background-color: $billTopColor;
+
+    $wide: $billStandardSize * 0.15;
+    box-shadow: $wide $wide 0 0 lighten($billTopColor, 5%) inset,
+                (-$wide) (-$wide) 0 0 lighten($billTopColor, 5%) inset,
+                0 0 $wide $wide transparentize(#CCC, 1-0.3) inset;
+
+
     &:before {
-      background-color: lighten($billGreenColor, 20%);
+      @include windowWiderLeftSide($billBaseColor, $bllWindowColor);
     }
+
     &:after {
-      background-color: $billGreenColor;
+      @include windowWiderBottomSide($billBaseColor, $bllWindowColor);
     }
   }
+
+  &.white {}
+
+
+  &.gray {}
+
+  &.blue {}
 }

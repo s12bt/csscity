@@ -1,28 +1,26 @@
 /*----------------
   land
 */
-
-.area {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row-reverse;
-}
-
-.block {
+.address {
   flex-shrink: 0;
-  position: relative;
-  display: flex;
-  flex-direction: row-reverse;
-  flex-wrap: wrap;
-  max-width: $squareSize * 2;
 
-  @for $i from 1 through 10 {
-    &.wide#{$i} {
-      max-width: $squareSize * $i;
-    }
+  position: relative;
+  width: $landWide;
+  height: $landLength;
+  background-color: $grassColor;
+  transform: translateZ($landDepth);
+  transform-style: preserve-3d;
+
+  &:before {
+    @include pseudoElementBase;
+    @include leftBend90deg($landDepth, $landLength);
+    background-color: darken($grassColor, 10%);
+  }
+
+  &:after {
+    @include pseudoElementBase;
+    @include bottomBend90deg($landWide, $landDepth);
+    background-color: darken($grassColor, 15%);
   }
 }
 
-.address {
-  @include defaultGroundBase();
-}

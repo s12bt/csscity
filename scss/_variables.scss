@@ -1,15 +1,62 @@
-$squareSize: 200px; //@ToDo cant`t change building
-$squareDepth: 10px;
-$streetWidth: 100px;
+/* -------------------------------
+  BASIS
+ */
+$squareSize: 200px;
 
-$skyColor: #BEE1E5;
-$cloudColor: #FFF;
-$grassColor: #AEC35A;
+/* -------------------------------
+  Land
+ */
+$cityDepth: 30px;
+$cityGroundColor: #D6B386;
 
-$streetBaseColor: #6F6C68;
-$streetLineColor: #FFF;
+$landDepth:  15px;
+$landBasis:  $squareSize;
+$landWide:   $landBasis;
+$landLength: $landBasis;
 
-$billStandardColor: #DDDBDC;
+
+/* -------------------------------
+  Road
+ */
+$roadDepth:  10px;
+$streetWidth: $squareSize * 0.5;
+$avenueWidth: $squareSize * 1;
+$roadAsphaltColor: #8D9192;
+$roadLineColor: #E4EAEC;
+
+
+/* -------------------------------
+  bill
+ */
+// area
+$billStandardWide:    $landBasis * 0.5;
+$billStandardLength:  $billStandardWide;
+$billRectangleWide:   $landBasis * 0.4;
+$billRectangleLength: $landBasis * 0.75;
+$billThinWide:        $landBasis * 0.25;
+$billThinLength:      $billThinWide;
+
+// height
+$billStandardSize: $landBasis * 0.5;
+$billLowHeight:    $billStandardSize;
+$billMediumHeight: $billLowHeight * 2; // must integer
+$billHighHeight:   $billLowHeight * 3; // must integer
+
+
+// color - left side on bill
+$billStandardColor: #F2F5FF;
+$billBrownColor   : #F3E6D4;
+
 $billBlueColor: #79AAD7;
 $billGreenColor: #B3CD82;
 $billWindowColor: transparentize(#86B8D6, 1-0.8);
+
+
+/* -------------------------------
+  pending
+ */
+$skyColor: #BEE1E5;
+$cloudColor: #FFF;
+$grassColor: #8CB836;
+
+

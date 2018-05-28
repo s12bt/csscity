@@ -1,58 +1,19 @@
 @import "variables";
 @import "mixin";
 @import "layers";
-@import "components/sky";
+@import "cityPlanning";
 @import "components/land";
 @import "components/road";
 @import "components/building";
+
+/*
+@import "components/sky";
 @import "components/tree";
 @import "components/car";
+*/
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
-
-body {
-  background: linear-gradient(to bottom, $skyColor, lighten($skyColor, 100%));
-}
-
-
-.city {
-  @include transformIsometric;
-  position: relative;
-  left: 100px;
-  top: 100px;
-
-  display: inline-block;
-  z-index: layer-get("base");
-}
-
-.busStop {
-  position: relative;
-  left: 30px;
-  top: 30px;
-  width: 20px;
-  height: 10px;
-  background-color: red;
-  transform: skew(-45deg);
-
-  &:after {
-    content: "";
-    position: absolute;
-    left: -10px;
-    width: 10px;
-    height: 10px;
-    background-color: blue;
-    transform: skewY(55deg);
-  }
-
-}
-
-
-
-
-
-

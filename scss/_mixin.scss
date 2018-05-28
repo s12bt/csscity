@@ -1,39 +1,140 @@
-@mixin transformIsometric {
-  transform: rotate(-30deg)
-  skew(30deg)
-  scale(0.8165, 0.7071)
+@mixin pseudoElementBase {
+  content: "";
+  position: absolute;
 }
 
-@mixin defaultGroundBase($groundColor: $grassColor) {
-  position: relative;
-  flex-shrink: 0;
-  z-index: layer-get("ground" "flat");
+@mixin leftBend90deg($width: 0, $height: 0) {
+  transform-origin: top right;
+  transform: rotateY(-90deg);
+  width: $width;
+  height: $height;
+  top: 0;
+  left: -($width);
+}
 
-  width: $squareSize;
-  height: $squareSize;
-  background-color: $groundColor;
+@mixin bottomBend90deg($width: 0, $height: 0) {
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  width: $width;
+  height: $height;
+  bottom: -($height);
+  left: 0;
+}
+
+/* ------------------------
+  bill
+ */
+// height
+@mixin billHeightBase($wide, $length, $height) {
+  transform: translateZ($height);
 
   &:before {
-    content: "";
-    position: absolute;
-    z-index: layer-get("ground" "depth");
-    top: $squareDepth * 0.5;
-    left: -$squareDepth;
-    width: $squareDepth;
-    height: $squareSize;
-    background-color: darken($groundColor, 10%);
-    transform: skewY(-45deg);
+    @include leftBend90deg($height, $length);
   }
 
   &:after {
-    content: "";
-    position: absolute;
-    z-index: layer-get("ground" "depth");
-    bottom: -$squareDepth;
-    right: $squareDepth * 0.5;
-    width: $squareSize;
-    height: $squareDepth;
-    background-color: darken($groundColor, 15%);
-    transform: skewX(-45deg);
+    @include bottomBend90deg($wide, $height);
   }
 }
+
+// window variation
+@mixin windowRectangle4x5LeftSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to bottom,
+      $surfaceColor,     $surfaceColor 17%,
+      transparent   17%, transparent   27%,
+      $surfaceColor 27%, $surfaceColor 31%,
+      transparent   31%, transparent   41%,
+      $surfaceColor 41%, $surfaceColor 45%,
+      transparent   45%, transparent   55%,
+      $surfaceColor 55%, $surfaceColor 59%,
+      transparent   59%, transparent   69%,
+      $surfaceColor 69%, $surfaceColor 73%,
+      transparent   73%, transparent   83%,
+      $surfaceColor 83%, $surfaceColor
+    ),
+    repeating-linear-gradient(to left,
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.15,
+      $windowColor  $billStandardSize*0.15, $windowColor  $billStandardSize*0.30,
+      $surfaceColor $billStandardSize*0.30, $surfaceColor $billStandardSize*0.35,
+      $windowColor  $billStandardSize*0.35, $windowColor  $billStandardSize*0.50,
+      $surfaceColor $billStandardSize*0.50, $surfaceColor $billStandardSize*0.55,
+      $windowColor  $billStandardSize*0.55, $windowColor  $billStandardSize*0.70,
+      $surfaceColor $billStandardSize*0.70, $surfaceColor $billStandardSize*0.75,
+      $windowColor  $billStandardSize*0.75, $windowColor  $billStandardSize*0.90,
+      $surfaceColor $billStandardSize*0.90, $surfaceColor $billStandardSize*1.00
+    );
+}
+
+
+
+@mixin windowRectangle4x5BottomSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to left,
+      $surfaceColor,     $surfaceColor 17%,
+      transparent   17%, transparent   27%,
+      $surfaceColor 27%, $surfaceColor 31%,
+      transparent   31%, transparent   41%,
+      $surfaceColor 41%, $surfaceColor 45%,
+      transparent   45%, transparent   55%,
+      $surfaceColor 55%, $surfaceColor 59%,
+      transparent   59%, transparent   69%,
+      $surfaceColor 69%, $surfaceColor 73%,
+      transparent   73%, transparent   83%,
+      $surfaceColor 83%, $surfaceColor
+    ),
+    repeating-linear-gradient(to bottom,
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.15,
+      $windowColor  $billStandardSize*0.15, $windowColor  $billStandardSize*0.30,
+      $surfaceColor $billStandardSize*0.30, $surfaceColor $billStandardSize*0.35,
+      $windowColor  $billStandardSize*0.35, $windowColor  $billStandardSize*0.50,
+      $surfaceColor $billStandardSize*0.50, $surfaceColor $billStandardSize*0.55,
+      $windowColor  $billStandardSize*0.55, $windowColor  $billStandardSize*0.70,
+      $surfaceColor $billStandardSize*0.70, $surfaceColor $billStandardSize*0.75,
+      $windowColor  $billStandardSize*0.75, $windowColor  $billStandardSize*0.90,
+      $surfaceColor $billStandardSize*0.90, $surfaceColor $billStandardSize*1.00
+    );
+}
+
+@mixin windowWiderLeftSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to bottom,
+      $surfaceColor,     $surfaceColor 10%,
+      transparent   10%, transparent   90%,
+      $surfaceColor 90%, $surfaceColor
+    ),
+    repeating-linear-gradient(to left,
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.08,
+      $windowColor  $billStandardSize*0.08, $windowColor  $billStandardSize*0.16,
+      $surfaceColor $billStandardSize*0.16, $surfaceColor $billStandardSize*0.18,
+      $windowColor  $billStandardSize*0.18, $windowColor  $billStandardSize*0.24,
+      $surfaceColor $billStandardSize*0.24, $surfaceColor $billStandardSize*0.26,
+      $windowColor  $billStandardSize*0.26, $windowColor  $billStandardSize*0.34,
+      $surfaceColor $billStandardSize*0.34, $surfaceColor $billStandardSize*0.36,
+      $windowColor  $billStandardSize*0.36, $windowColor  $billStandardSize*0.44,
+      $surfaceColor $billStandardSize*0.44, $surfaceColor $billStandardSize*0.50
+    );
+}
+
+
+
+@mixin windowWiderBottomSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to left,
+      $surfaceColor,     $surfaceColor 10%,
+      transparent   10%, transparent   90%,
+      $surfaceColor 90%, $surfaceColor
+    ),
+    repeating-linear-gradient(to bottom,
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.08,
+      $windowColor  $billStandardSize*0.08, $windowColor  $billStandardSize*0.16,
+      $surfaceColor $billStandardSize*0.16, $surfaceColor $billStandardSize*0.18,
+      $windowColor  $billStandardSize*0.18, $windowColor  $billStandardSize*0.24,
+      $surfaceColor $billStandardSize*0.24, $surfaceColor $billStandardSize*0.26,
+      $windowColor  $billStandardSize*0.26, $windowColor  $billStandardSize*0.34,
+      $surfaceColor $billStandardSize*0.34, $surfaceColor $billStandardSize*0.36,
+      $windowColor  $billStandardSize*0.36, $windowColor  $billStandardSize*0.44,
+      $surfaceColor $billStandardSize*0.44, $surfaceColor $billStandardSize*0.50
+    );
+}
+
