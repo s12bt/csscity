@@ -2,20 +2,18 @@
 @import "mixin";
 @import "layers";
 @import "cityPlanning";
-@import "components/sky";
 @import "components/land";
 @import "components/road";
 @import "components/building";
+
+/*
+@import "components/sky";
 @import "components/tree";
 @import "components/car";
+*/
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-
-body {
-  //background: linear-gradient(to bottom, $skyColor, lighten($skyColor, 100%));
 }
