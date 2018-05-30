@@ -11,10 +11,10 @@
   bill
  */
 /* -------------------------------
-  pending
+  car
  */
-/* ------------------------
-  bill
+/* -------------------------------
+  pending
  */
 .city {
   display: flex;
@@ -193,6 +193,9 @@
     left: 0;
     background-color: #6e7273; }
 
+/* ------------------------
+  bill mixin
+ */
 /*-------------------------
   building
  */
@@ -424,10 +427,79 @@
     .bill.brown:after {
       background-image: linear-gradient(to left, #F3E6D4, #F3E6D4 10%, transparent 10%, transparent 90%, #F3E6D4 90%, #F3E6D4), repeating-linear-gradient(to bottom, #F3E6D4, #F3E6D4 8px, #C6B09D 8px, #C6B09D 16px, #F3E6D4 16px, #F3E6D4 18px, #C6B09D 18px, #C6B09D 24px, #F3E6D4 24px, #F3E6D4 26px, #C6B09D 26px, #C6B09D 34px, #F3E6D4 34px, #F3E6D4 36px, #C6B09D 36px, #C6B09D 44px, #F3E6D4 44px, #F3E6D4 50px); }
 
+/*-------------------------
+  car mixin
+ */
+/*-------------------------
+  car
+ */
+.car {
+  width: 40px;
+  height: 30px;
+  transform: translateZ(30px);
+  transform-style: preserve-3d;
+  background-color: #f10a00;
+  position: absolute;
+  right: 0; }
+  .car:before {
+    content: "";
+    position: absolute;
+    transform-origin: top right;
+    transform: rotateY(-90deg);
+    width: 27px;
+    height: 30px;
+    top: 0;
+    left: -27px; }
+  .car:after {
+    content: "";
+    position: absolute;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    width: 40px;
+    height: 30px;
+    bottom: -30px;
+    left: 0; }
+  .car:before {
+    background-color: transparent;
+    background-image: linear-gradient(to left, #FFF, #FFF), linear-gradient(to left, transparent, transparent 21.6px, #c80800 21.6px), linear-gradient(to bottom, #e20900, #e20900 3px, transparent 3px, transparent 27px, #e20900 27px, #e20900), linear-gradient(to left, #e20900 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #e20900 16.2px, #e20900);
+    background-repeat: no-repeat;
+    background-size: 3px 15px, auto, auto, auto;
+    background-position: left center, 0, 0, 0; }
+  .car:after {
+    background-image: radial-gradient(circle closest-side at center, #333 100%, transparent 100%), linear-gradient(to bottom, #d80900, #d80900), linear-gradient(to bottom, #d80900, #d80900), linear-gradient(to bottom, #d80900, #d80900), linear-gradient(to bottom, #d80900 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #d80900 16.2px, #d80900 21.6px, #c80800 21.6px, #c80800 27px, transparent 27px, transparent);
+    background-size: 20px 9px, 4px 18px, 4px 18px, 4px 18px, auto auto;
+    background-position: 0 20px, left top, center top, right top, 0 0;
+    background-repeat: repeat-x, no-repeat, no-repeat, no-repeat, no-repeat; }
+  .car.red {
+    background-color: #f10a00; }
+    .car.red:before {
+      background-color: transparent;
+      background-image: linear-gradient(to left, #FFF, #FFF), linear-gradient(to left, transparent, transparent 21.6px, #c80800 21.6px), linear-gradient(to bottom, #e20900, #e20900 3px, transparent 3px, transparent 27px, #e20900 27px, #e20900), linear-gradient(to left, #e20900 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #e20900 16.2px, #e20900);
+      background-repeat: no-repeat;
+      background-size: 3px 15px, auto, auto, auto;
+      background-position: left center, 0, 0, 0; }
+    .car.red:after {
+      background-image: radial-gradient(circle closest-side at center, #333 100%, transparent 100%), linear-gradient(to bottom, #d80900, #d80900), linear-gradient(to bottom, #d80900, #d80900), linear-gradient(to bottom, #d80900, #d80900), linear-gradient(to bottom, #d80900 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #d80900 16.2px, #d80900 21.6px, #c80800 21.6px, #c80800 27px, transparent 27px, transparent);
+      background-size: 20px 9px, 4px 18px, 4px 18px, 4px 18px, auto auto;
+      background-position: 0 20px, left top, center top, right top, 0 0;
+      background-repeat: repeat-x, no-repeat, no-repeat, no-repeat, no-repeat; }
+  .car.blue {
+    background-color: blue; }
+    .car.blue:before {
+      background-color: transparent;
+      background-image: linear-gradient(to left, #FFF, #FFF), linear-gradient(to left, transparent, transparent 21.6px, #0000d6 21.6px), linear-gradient(to bottom, #0000f0, #0000f0 3px, transparent 3px, transparent 27px, #0000f0 27px, #0000f0), linear-gradient(to left, #0000f0 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #0000f0 16.2px, #0000f0);
+      background-repeat: no-repeat;
+      background-size: 3px 15px, auto, auto, auto;
+      background-position: left center, 0, 0, 0; }
+    .car.blue:after {
+      background-image: radial-gradient(circle closest-side at center, #333 100%, transparent 100%), linear-gradient(to bottom, #0000e6, #0000e6), linear-gradient(to bottom, #0000e6, #0000e6), linear-gradient(to bottom, #0000e6, #0000e6), linear-gradient(to bottom, #0000e6 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #0000e6 16.2px, #0000e6 21.6px, #0000d6 21.6px, #0000d6 27px, transparent 27px, transparent);
+      background-size: 20px 9px, 4px 18px, 4px 18px, 4px 18px, auto auto;
+      background-position: 0 20px, left top, center top, right top, 0 0;
+      background-repeat: repeat-x, no-repeat, no-repeat, no-repeat, no-repeat; }
+
 /*
 @import "components/sky";
 @import "components/tree";
-@import "components/car";
 */
 * {
   box-sizing: border-box;

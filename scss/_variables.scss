@@ -53,6 +53,26 @@ $billWindowColor: transparentize(#86B8D6, 1-0.8);
 
 
 /* -------------------------------
+  car
+ */
+// size
+$carWidth: $squareSize * 0.2;
+$carHeight: $squareSize * 0.15;
+$carDepth: $squareSize * 0.15;
+$shortSideDepth: $carDepth * 0.9;
+
+// base color
+$carWindowColor: #8CC2EB;
+$carTireColor: #333;
+$carNumberPlateColor: #FFF;
+
+// color variation
+$carRedColor: #f10a00;
+$carBlueColor: blue;
+
+
+
+/* -------------------------------
   pending
  */
 $skyColor: #BEE1E5;

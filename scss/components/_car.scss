@@ -1,129 +1,133 @@
 /*-------------------------
-  car
+  car mixin
  */
-.car {
-  $tireColor: #3C4953;
-  $windowColor: #8CC2EB;
-  $carRedColor: #E30C0C;
-  $carBlueColor: #1B53B4;
-  $carGreenColor: #3CC1A9;
+@mixin carBodyBase() {
+  width: $carWidth;
+  height: $carHeight;
 
-  @mixin onAvenueCarColorBase($color){
-    $darkColor: darken($color, 8%);
-    background-image: radial-gradient(ellipse farthest-corner, $color, $darkColor);
-    box-shadow: -3px 5px 0 2px $darkColor;
-
-    &:before {
-      background-color: $color;
-    }
-  }
-
-  position: absolute;
-  width: 55px;
-  height: 30px;
+  transform: translateZ($carDepth);
+  transform-style: preserve-3d;
 
   &:before {
-    content: "";
-    position: absolute;
-    top: -7px;
-    border-radius: 6px;
-    width: 24px;
-    height: 25px;
+    @include pseudoElementBase;
+    @include leftBend90deg($shortSideDepth, $carHeight);
   }
 
   &:after {
-    content: "";
-    position:absolute;
-    left: 3px;
-    bottom: -13px;
-    width: 12px;
-    height: 12px;
-    background-color: $tireColor;
-    border-radius: 50%;
-    transform: skew(-30deg);
-    box-shadow: 28px 0 0 0 $tireColor;
+    @include pseudoElementBase;
+    @include bottomBend90deg($carWidth, $carDepth);
+  }
+}
+
+@mixin carColorBase($bodycolor) {
+  background-color: $bodycolor;
+  $bumperColor: darken($bodycolor, 8%);
+
+  &:before {
+    $leftSideColor: darken($bodycolor, 3%);
+    background-color: transparent;
+    background-image:
+      // number plate
+      // bumper
+      // frame
+      // body
+      linear-gradient(to left,
+        $carNumberPlateColor, $carNumberPlateColor
+      ),
+      linear-gradient(to left,
+        transparent, transparent  $shortSideDepth * 0.8,
+        $bumperColor  $shortSideDepth * 0.8
+      ),
+      linear-gradient(to bottom,
+        $leftSideColor,                  $leftSideColor $carHeight * 0.1,
+        transparent    $carHeight * 0.1, transparent    $carHeight * 0.9,
+        $leftSideColor $carHeight * 0.9, $leftSideColor
+      ),
+      linear-gradient(to left,
+        $leftSideColor   $shortSideDepth * 0.1,
+        $carWindowColor  $shortSideDepth * 0.1, $carWindowColor $shortSideDepth * 0.6,
+        $leftSideColor   $shortSideDepth * 0.6, $leftSideColor
+      );
+    background-repeat: no-repeat;
+    background-size:
+      $carHeight*0.1 $carHeight*0.5,
+      auto,
+      auto,
+      auto;
+    background-position:
+      left center,
+      0,
+      0,
+      0;
   }
 
-  &.toWest {
-    right: 0;
-    top: 0;
-    border-radius: 10px 16px 4px 8px;
+  &:after {
+    $bottomSideColor: darken($bodycolor, 5%);
+    background-image:
+      // tire
+      // frame
+      // frame
+      // frame
+      // body
+      radial-gradient(circle closest-side at center,
+        $carTireColor 100%, transparent 100%
+      ),
+      linear-gradient(to bottom,
+        $bottomSideColor, $bottomSideColor
+      ),
+      linear-gradient(to bottom,
+        $bottomSideColor, $bottomSideColor
+      ),
+      linear-gradient(to bottom,
+        $bottomSideColor, $bottomSideColor
+      ),
+      linear-gradient(to bottom,
+        $bottomSideColor   $shortSideDepth * 0.1,
+        $carWindowColor    $shortSideDepth * 0.1, $carWindowColor    $shortSideDepth * 0.6,
+        $bottomSideColor   $shortSideDepth * 0.6, $bottomSideColor   $shortSideDepth * 0.8,
+        $bumperColor       $shortSideDepth * 0.8, $bumperColor       $shortSideDepth,
+        transparent        $shortSideDepth,       transparent
+      );
 
-    &:before {
-      right: 3px;
-      box-shadow: -6px 4px 0 2px $windowColor;
-    }
+    background-size:
+      $carWidth*0.5  $carDepth*0.3,
+      $carWidth*0.1  $carDepth*0.6,
+      $carWidth*0.1  $carDepth*0.6,
+      $carWidth*0.1  $carDepth*0.6,
+      auto auto;
+    background-position:
+      0 $carDepth/3*2,
+      left top,
+      center top,
+      right top,
+      0 0;
+    background-repeat:
+      repeat-x,
+      no-repeat,
+      no-repeat,
+      no-repeat,
+      no-repeat;
   }
+}
 
-  &.toEast {
-    left: 0;
-    bottom: 25px;
-    border-radius:16px 10px 8px 4px;
+/*-------------------------
+  car
+ */
+.car {
+  @include carBodyBase();
+  @include carColorBase($carRedColor);
 
-    &:before {
-      right: 9px;
-      box-shadow: -3px 5px 0 2px $windowColor;
-    }
-  }
+  position: absolute;
+  right: 0;
 
-  /* color */
-  // @ToDo create color array, and compile each color style automatic.
   &.red {
-    @include onAvenueCarColorBase($carRedColor);
+    @include carColorBase($carRedColor);
   }
 
   &.blue {
-    @include onAvenueCarColorBase($carBlueColor);
-  }
-
-  &.green {
-    @include onAvenueCarColorBase($carGreenColor);
-  }
-
-  /* animation */
-  &.run {
-    animation-duration: 15s;
-    animation-direction: normal;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-  }
-
-  &.run.toWest {
-    animation-name: onAvenueToRight;
-  }
-
-  &.run.toEast {
-    animation-name: onAvenueToLeft;
-  }
-
-  @keyframes onAvenueToRight {
-    from {
-      right: 0%;
-    }
-
-    to {
-      right: 100%;
-    }
-  }
-
-  @keyframes onAvenueToLeft {
-    from {
-      left: 0%;
-    }
-
-    to {
-      left: 100%;
-    }
+    @include carColorBase($carBlueColor);
   }
 }
 
-@for $avenue from 1 through 10 {
-  .avenue:nth-of-type(#{$avenue}) {
-    @for $car from 1 through 10 {
-      .car.run:nth-of-type(#{$car}) {
-        animation-duration: 30 - random(10)*2 + s;
-        animation-delay: random(3) + s;
-      }
-    }
-  }
-}
+
+

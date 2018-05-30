@@ -1,7 +1,119 @@
+/* ------------------------
+  bill mixin
+ */
+// height
+@mixin billHeightBase($wide, $length, $height) {
+  transform: translateZ($height);
+
+  &:before {
+    @include leftBend90deg($height, $length);
+  }
+
+  &:after {
+    @include bottomBend90deg($wide, $height);
+  }
+}
+
+// window variation
+@mixin windowRectangle4x5LeftSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to bottom,
+      $surfaceColor,     $surfaceColor 17%,
+      transparent   17%, transparent   27%,
+      $surfaceColor 27%, $surfaceColor 31%,
+      transparent   31%, transparent   41%,
+      $surfaceColor 41%, $surfaceColor 45%,
+      transparent   45%, transparent   55%,
+      $surfaceColor 55%, $surfaceColor 59%,
+      transparent   59%, transparent   69%,
+      $surfaceColor 69%, $surfaceColor 73%,
+      transparent   73%, transparent   83%,
+      $surfaceColor 83%, $surfaceColor
+    ),
+    repeating-linear-gradient(to left,
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.15,
+      $windowColor  $billStandardSize*0.15, $windowColor  $billStandardSize*0.30,
+      $surfaceColor $billStandardSize*0.30, $surfaceColor $billStandardSize*0.35,
+      $windowColor  $billStandardSize*0.35, $windowColor  $billStandardSize*0.50,
+      $surfaceColor $billStandardSize*0.50, $surfaceColor $billStandardSize*0.55,
+      $windowColor  $billStandardSize*0.55, $windowColor  $billStandardSize*0.70,
+      $surfaceColor $billStandardSize*0.70, $surfaceColor $billStandardSize*0.75,
+      $windowColor  $billStandardSize*0.75, $windowColor  $billStandardSize*0.90,
+      $surfaceColor $billStandardSize*0.90, $surfaceColor $billStandardSize*1.00
+    );
+}
+
+@mixin windowRectangle4x5BottomSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to left,
+      $surfaceColor,     $surfaceColor 17%,
+      transparent   17%, transparent   27%,
+      $surfaceColor 27%, $surfaceColor 31%,
+      transparent   31%, transparent   41%,
+      $surfaceColor 41%, $surfaceColor 45%,
+      transparent   45%, transparent   55%,
+      $surfaceColor 55%, $surfaceColor 59%,
+      transparent   59%, transparent   69%,
+      $surfaceColor 69%, $surfaceColor 73%,
+      transparent   73%, transparent   83%,
+      $surfaceColor 83%, $surfaceColor
+    ),
+    repeating-linear-gradient(to bottom,
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.15,
+      $windowColor  $billStandardSize*0.15, $windowColor  $billStandardSize*0.30,
+      $surfaceColor $billStandardSize*0.30, $surfaceColor $billStandardSize*0.35,
+      $windowColor  $billStandardSize*0.35, $windowColor  $billStandardSize*0.50,
+      $surfaceColor $billStandardSize*0.50, $surfaceColor $billStandardSize*0.55,
+      $windowColor  $billStandardSize*0.55, $windowColor  $billStandardSize*0.70,
+      $surfaceColor $billStandardSize*0.70, $surfaceColor $billStandardSize*0.75,
+      $windowColor  $billStandardSize*0.75, $windowColor  $billStandardSize*0.90,
+      $surfaceColor $billStandardSize*0.90, $surfaceColor $billStandardSize*1.00
+    );
+}
+
+@mixin windowWiderLeftSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to bottom,
+      $surfaceColor,     $surfaceColor 10%,
+      transparent   10%, transparent   90%,
+      $surfaceColor 90%, $surfaceColor
+    ),
+    repeating-linear-gradient(to left,
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.08,
+      $windowColor  $billStandardSize*0.08, $windowColor  $billStandardSize*0.16,
+      $surfaceColor $billStandardSize*0.16, $surfaceColor $billStandardSize*0.18,
+      $windowColor  $billStandardSize*0.18, $windowColor  $billStandardSize*0.24,
+      $surfaceColor $billStandardSize*0.24, $surfaceColor $billStandardSize*0.26,
+      $windowColor  $billStandardSize*0.26, $windowColor  $billStandardSize*0.34,
+      $surfaceColor $billStandardSize*0.34, $surfaceColor $billStandardSize*0.36,
+      $windowColor  $billStandardSize*0.36, $windowColor  $billStandardSize*0.44,
+      $surfaceColor $billStandardSize*0.44, $surfaceColor $billStandardSize*0.50
+    );
+}
+
+@mixin windowWiderBottomSide($surfaceColor, $windowColor: #7292AB) {
+  background-image:
+    linear-gradient(to left,
+      $surfaceColor,     $surfaceColor 10%,
+      transparent   10%, transparent   90%,
+      $surfaceColor 90%, $surfaceColor
+    ),
+    repeating-linear-gradient(to bottom,
+      $surfaceColor,                        $surfaceColor $billStandardSize*0.08,
+      $windowColor  $billStandardSize*0.08, $windowColor  $billStandardSize*0.16,
+      $surfaceColor $billStandardSize*0.16, $surfaceColor $billStandardSize*0.18,
+      $windowColor  $billStandardSize*0.18, $windowColor  $billStandardSize*0.24,
+      $surfaceColor $billStandardSize*0.24, $surfaceColor $billStandardSize*0.26,
+      $windowColor  $billStandardSize*0.26, $windowColor  $billStandardSize*0.34,
+      $surfaceColor $billStandardSize*0.34, $surfaceColor $billStandardSize*0.36,
+      $windowColor  $billStandardSize*0.36, $windowColor  $billStandardSize*0.44,
+      $surfaceColor $billStandardSize*0.44, $surfaceColor $billStandardSize*0.50
+    );
+}
+
 /*-------------------------
   building
  */
-
 .bill {
   /* base */
   $billBaseColor:   $billStandardColor;
