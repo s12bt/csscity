@@ -11,10 +11,10 @@
   bill
  */
 /* -------------------------------
-  pending
+  transport
  */
-/* ------------------------
-  bill
+/* -------------------------------
+  pending
  */
 .city {
   display: flex;
@@ -193,6 +193,9 @@
     left: 0;
     background-color: #6e7273; }
 
+/* ------------------------
+  bill mixin
+ */
 /*-------------------------
   building
  */
@@ -424,10 +427,186 @@
     .bill.brown:after {
       background-image: linear-gradient(to left, #F3E6D4, #F3E6D4 10%, transparent 10%, transparent 90%, #F3E6D4 90%, #F3E6D4), repeating-linear-gradient(to bottom, #F3E6D4, #F3E6D4 8px, #C6B09D 8px, #C6B09D 16px, #F3E6D4 16px, #F3E6D4 18px, #C6B09D 18px, #C6B09D 24px, #F3E6D4 24px, #F3E6D4 26px, #C6B09D 26px, #C6B09D 34px, #F3E6D4 34px, #F3E6D4 36px, #C6B09D 36px, #C6B09D 44px, #F3E6D4 44px, #F3E6D4 50px); }
 
+/*-------------------------
+  transport position
+ */
+.transport {
+  position: absolute;
+  right: 0; }
+
+.lane {
+  position: relative;
+  height: 50px; }
+  .lane:nth-of-type(2n+1) .transport {
+    right: 0; }
+  .lane:nth-of-type(2n) .transport {
+    left: 0; }
+
+/*-------------------------
+  car mixin
+ */
+/*-------------------------
+  car
+ */
+.car {
+  width: 40px;
+  height: 30px;
+  transform: translateZ(30px);
+  transform-style: preserve-3d;
+  background-color: #f10a00; }
+  .car:before {
+    content: "";
+    position: absolute;
+    transform-origin: top right;
+    transform: rotateY(-90deg);
+    width: 27px;
+    height: 30px;
+    top: 0;
+    left: -27px; }
+  .car:after {
+    content: "";
+    position: absolute;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+    width: 40px;
+    height: 30px;
+    bottom: -30px;
+    left: 0; }
+  .car:before {
+    background-color: transparent;
+    background-image: linear-gradient(to left, #FFF, #FFF), linear-gradient(to left, transparent, transparent 21.6px, #c80800 21.6px), linear-gradient(to bottom, #e20900, #e20900 3px, transparent 3px, transparent 27px, #e20900 27px, #e20900), linear-gradient(to left, #e20900 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #e20900 16.2px, #e20900);
+    background-repeat: no-repeat;
+    background-size: 3px 15px, auto, auto, auto;
+    background-position: left center, 0, 0, 0; }
+  .car.red {
+    background-color: #f10a00; }
+    .car.red:after {
+      background-image: radial-gradient(circle closest-side at center, #333 100%, transparent 100%), linear-gradient(to bottom, #d80900, #d80900), linear-gradient(to bottom, #d80900, #d80900), linear-gradient(to bottom, #d80900, #d80900), linear-gradient(to bottom, #d80900 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #d80900 16.2px, #d80900 21.6px, #c80800 21.6px, #c80800 27px, transparent 27px, transparent);
+      background-size: 20px 9px, 4px 18px, 4px 18px, 4px 18px, auto auto;
+      background-position: 0 21px, left top, center top, right top, 0 0;
+      background-repeat: repeat-x, no-repeat, no-repeat, no-repeat, no-repeat; }
+    .car.red:before {
+      background-color: transparent;
+      background-image: linear-gradient(to left, #FFF, #FFF), linear-gradient(to left, transparent, transparent 21.6px, #c80800 21.6px), linear-gradient(to bottom, #e20900, #e20900 3px, transparent 3px, transparent 27px, #e20900 27px, #e20900), linear-gradient(to left, #e20900 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #e20900 16.2px, #e20900);
+      background-repeat: no-repeat;
+      background-size: 3px 15px, auto, auto, auto;
+      background-position: left center, 0, 0, 0; }
+  .car.blue {
+    background-color: blue; }
+    .car.blue:after {
+      background-image: radial-gradient(circle closest-side at center, #333 100%, transparent 100%), linear-gradient(to bottom, #0000e6, #0000e6), linear-gradient(to bottom, #0000e6, #0000e6), linear-gradient(to bottom, #0000e6, #0000e6), linear-gradient(to bottom, #0000e6 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #0000e6 16.2px, #0000e6 21.6px, #0000d6 21.6px, #0000d6 27px, transparent 27px, transparent);
+      background-size: 20px 9px, 4px 18px, 4px 18px, 4px 18px, auto auto;
+      background-position: 0 21px, left top, center top, right top, 0 0;
+      background-repeat: repeat-x, no-repeat, no-repeat, no-repeat, no-repeat; }
+    .car.blue:before {
+      background-color: transparent;
+      background-image: linear-gradient(to left, #FFF, #FFF), linear-gradient(to left, transparent, transparent 21.6px, #0000d6 21.6px), linear-gradient(to bottom, #0000f0, #0000f0 3px, transparent 3px, transparent 27px, #0000f0 27px, #0000f0), linear-gradient(to left, #0000f0 2.7px, #8CC2EB 2.7px, #8CC2EB 16.2px, #0000f0 16.2px, #0000f0);
+      background-repeat: no-repeat;
+      background-size: 3px 15px, auto, auto, auto;
+      background-position: left center, 0, 0, 0; }
+
+.lane:nth-of-type(2n) .car.red {
+  background-color: #f10a00; }
+  .lane:nth-of-type(2n) .car.red:before {
+    background-color: transparent;
+    background-image: linear-gradient(to left, #b3b3b3, #b3b3b3), linear-gradient(to left, transparent, transparent 21.6px, transparent 21.6px), linear-gradient(to bottom, #c80800, #c80800 3px, transparent 3px, transparent 27px, #c80800 27px, #c80800), linear-gradient(to left, #c80800 2.7px, #61abe3 2.7px, #61abe3 10.8px, #c80800 10.8px, #c80800);
+    background-repeat: no-repeat;
+    background-size: 3px 15px, auto, auto, auto;
+    background-position: left center, 0, 0, 0; }
+.lane:nth-of-type(2n) .car.blue {
+  background-color: blue; }
+  .lane:nth-of-type(2n) .car.blue:before {
+    background-color: transparent;
+    background-image: linear-gradient(to left, #b3b3b3, #b3b3b3), linear-gradient(to left, transparent, transparent 21.6px, transparent 21.6px), linear-gradient(to bottom, #0000d6, #0000d6 3px, transparent 3px, transparent 27px, #0000d6 27px, #0000d6), linear-gradient(to left, #0000d6 2.7px, #61abe3 2.7px, #61abe3 10.8px, #0000d6 10.8px, #0000d6);
+    background-repeat: no-repeat;
+    background-size: 3px 15px, auto, auto, auto;
+    background-position: left center, 0, 0, 0; }
+
+@keyframes transportCarMovingOnAvenueToLeft {
+  0% {
+    right: 0; }
+  10% {
+    transform: translateZ(30px); }
+  10.5% {
+    transform: translateZ(32.1px); }
+  11% {
+    transform: translateZ(30px); }
+  30% {
+    transform: translateZ(30px); }
+  30.5% {
+    transform: translateZ(32.1px); }
+  31% {
+    transform: translateZ(30px); }
+  50% {
+    transform: translateZ(30px); }
+  50.5% {
+    transform: translateZ(32.1px); }
+  51% {
+    transform: translateZ(30px); }
+  70% {
+    transform: translateZ(30px); }
+  70.5% {
+    transform: translateZ(32.1px); }
+  71% {
+    transform: translateZ(30px); }
+  90% {
+    transform: translateZ(30px); }
+  90.5% {
+    transform: translateZ(32.1px); }
+  91% {
+    transform: translateZ(30px); }
+  100% {
+    right: calc(100% - 40px); } }
+@keyframes transportCarMovingOnAvenueToRight {
+  0% {
+    left: 0; }
+  20% {
+    transform: translateZ(30px); }
+  20.5% {
+    transform: translateZ(32.1px); }
+  21% {
+    transform: translateZ(30px); }
+  40% {
+    transform: translateZ(30px); }
+  40.5% {
+    transform: translateZ(32.1px); }
+  41% {
+    transform: translateZ(30px); }
+  60% {
+    transform: translateZ(30px); }
+  60.5% {
+    transform: translateZ(32.1px); }
+  61% {
+    transform: translateZ(30px); }
+  80% {
+    transform: translateZ(30px); }
+  80.5% {
+    transform: translateZ(32.1px); }
+  81% {
+    transform: translateZ(30px); }
+  100% {
+    left: calc(100% - 40px); } }
+.car.run {
+  animation-duration: 15s;
+  animation-direction: normal;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: transportCarMovingOnAvenueToLeft; }
+
+.lane:nth-of-type(2n) .car.run {
+  animation-name: transportCarMovingOnAvenueToRight; }
+.lane:nth-of-type(2n + 1) .car.run {
+  animation-name: transportCarMovingOnAvenueToLeft; }
+
+.car.run.slow {
+  animation-duration: 19.5s; }
+
+.car.run.fast {
+  animation-duration: 10.5s; }
+
 /*
 @import "components/sky";
 @import "components/tree";
-@import "components/car";
 */
 * {
   box-sizing: border-box;

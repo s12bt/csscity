@@ -53,6 +53,31 @@ $billWindowColor: transparentize(#86B8D6, 1-0.8);
 
 
 /* -------------------------------
+  transport
+ */
+$transportHeightBase: $squareSize * 0.15;
+
+// car size
+$carWidth: $squareSize * 0.2;
+$carHeight: $transportHeightBase;
+$carDepth: $squareSize * 0.15;
+$shortSideDepth: $carDepth * 0.9;
+
+// car base color
+$carWindowColor: #8CC2EB;
+$carTireColor: #333;
+$carNumberPlateColor: #FFF;
+
+// car color variation
+$carRedColor: #f10a00;
+$carBlueColor: blue;
+
+// car speed
+$carAverageSpeed: 15s;
+
+
+
+/* -------------------------------
   pending
  */
 $skyColor: #BEE1E5;
