@@ -32,13 +32,13 @@
   &:before {
     @include pseudoElementBase;
     @include leftBend90deg($roadDepth, 100%);
-    background-color: darken($roadAsphaltColor, 10%);
+    background-color: darken($roadAsphaltColor, 5%);
   }
 
   &:after {
     @include pseudoElementBase;
     @include bottomBend90deg(100%, $roadDepth);
-    background-color: darken($roadAsphaltColor, 12%);
+    background-color: darken($roadAsphaltColor, 5%);
   }
 }
 
@@ -81,12 +81,12 @@
   &:before {
     @include pseudoElementBase;
     @include leftBend90deg($roadDepth, 100%);
-    background-color: darken($roadAsphaltColor, 10%);
+    background-color: darken($roadAsphaltColor, 5%);
   }
 
   &:after {
     @include pseudoElementBase;
     @include bottomBend90deg(100%, $roadDepth);
-    background-color: darken($roadAsphaltColor, 12%);
+    background-color: darken($roadAsphaltColor, 5%);
   }
 }

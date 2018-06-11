@@ -15,7 +15,7 @@
 }
 
 // window variation
-@mixin windowRectangle4x5LeftSide($surfaceColor, $windowColor: #7292AB) {
+@mixin windowRectangle4x5LeftSide($surfaceColor, $windowColor: $billWindowBlueColor) {
   background-image:
     linear-gradient(to bottom,
       $surfaceColor,     $surfaceColor 17%,
@@ -43,7 +43,7 @@
     );
 }
 
-@mixin windowRectangle4x5BottomSide($surfaceColor, $windowColor: #7292AB) {
+@mixin windowRectangle4x5BottomSide($surfaceColor, $windowColor: $billWindowBlueColor) {
   background-image:
     linear-gradient(to left,
       $surfaceColor,     $surfaceColor 17%,
@@ -71,7 +71,7 @@
     );
 }
 
-@mixin windowWiderLeftSide($surfaceColor, $windowColor: #7292AB) {
+@mixin windowWiderLeftSide($surfaceColor, $windowColor: $billWindowBlueColor) {
   background-image:
     linear-gradient(to bottom,
       $surfaceColor,     $surfaceColor 10%,
@@ -91,7 +91,7 @@
     );
 }
 
-@mixin windowWiderBottomSide($surfaceColor, $windowColor: #7292AB) {
+@mixin windowWiderBottomSide($surfaceColor, $windowColor: $billWindowBlueColor) {
   background-image:
     linear-gradient(to left,
       $surfaceColor,     $surfaceColor 10%,
@@ -118,7 +118,7 @@
   /* base */
   $billBaseColor:   $billStandardColor;
   $billTopColor:    lighten($billStandardColor, 1%);
-  $billShadowColor: darken($billStandardColor, 1%);
+  $billShadowColor: darken($billStandardColor, 3%);
 
   position: absolute;
   margin-left: ($landWide - $billStandardWide)/2;
@@ -222,8 +222,8 @@
   &.brown {
     $billBaseColor:   $billBrownColor;
     $billTopColor:    lighten($billBrownColor, 1%);
-    $billShadowColor: darken($billBrownColor, 1%);
-    $bllWindowColor:  #C6B09D;
+    $billShadowColor: darken($billBrownColor, 3%);
+    $billWindowColor:  $billWindowBrownColor;
 
     background-color: $billTopColor;
 
@@ -234,11 +234,11 @@
 
 
     &:before {
-      @include windowWiderLeftSide($billBaseColor, $bllWindowColor);
+      @include windowWiderLeftSide($billBaseColor, $billWindowColor);
     }
 
     &:after {
-      @include windowWiderBottomSide($billBaseColor, $bllWindowColor);
+      @include windowWiderBottomSide($billShadowColor, $billWindowColor);
     }
   }
 

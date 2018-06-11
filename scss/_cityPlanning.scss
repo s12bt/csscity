@@ -20,7 +20,7 @@
   &:after {
     @include pseudoElementBase;
     @include bottomBend90deg(100%, $cityDepth);
-    background-color: darken($cityGroundColor, 5%);
+    background-color: darken($cityGroundColor, 3%);
   }
 }
 

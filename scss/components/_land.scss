@@ -14,13 +14,13 @@
   &:before {
     @include pseudoElementBase;
     @include leftBend90deg($landDepth, $landLength);
-    background-color: darken($grassColor, 10%);
+    background-color: darken($grassColor, 5%);
   }
 
   &:after {
     @include pseudoElementBase;
     @include bottomBend90deg($landWide, $landDepth);
-    background-color: darken($grassColor, 15%);
+    background-color: darken($grassColor, 8%);
   }
 }
 
