@@ -7,13 +7,10 @@ $squareSize: 200px;
   Land
  */
 $cityDepth: 30px;
-$cityGroundColor: #D6B386;
-
 $landDepth:  15px;
 $landBasis:  $squareSize;
 $landWide:   $landBasis;
 $landLength: $landBasis;
-
 
 /* -------------------------------
   Road
@@ -21,9 +18,6 @@ $landLength: $landBasis;
 $roadDepth:  10px;
 $streetWidth: $squareSize * 0.5;
 $avenueWidth: $squareSize * 1;
-$roadAsphaltColor: #8D9192;
-$roadLineColor: #E4EAEC;
-
 
 /* -------------------------------
   bill
@@ -42,16 +36,6 @@ $billLowHeight:    $billStandardSize;
 $billMediumHeight: $billLowHeight * 2; // must integer
 $billHighHeight:   $billLowHeight * 3; // must integer
 
-
-// color - left side on bill
-$billStandardColor: #F2F5FF;
-$billBrownColor   : #F3E6D4;
-
-$billBlueColor: #79AAD7;
-$billGreenColor: #B3CD82;
-$billWindowColor: transparentize(#86B8D6, 1-0.8);
-
-
 /* -------------------------------
   transport
  */
@@ -63,25 +47,35 @@ $carHeight: $transportHeightBase;
 $carDepth: $squareSize * 0.15;
 $shortSideDepth: $carDepth * 0.9;
 
-// car base color
-$carWindowColor: #8CC2EB;
-$carTireColor: #333;
-$carNumberPlateColor: #FFF;
-
-// car color variation
-$carRedColor: #f10a00;
-$carBlueColor: blue;
-
 // car speed
 $carAverageSpeed: 15s;
 
-
-
 /* -------------------------------
-  pending
+  COLOR
  */
+// land
+$cityGroundColor: #D6B386;
+$grassColor: #9FC76B;
+
+// road
+$roadAsphaltColor: #999999;
+$roadLineColor: #E4EAEC;
+
+// bill
+$billStandardColor: darken(#F2F5FF, 1%);
+$billBrownColor   : darken(#F0E5DE, 1%);
+$billBlueColor: #79AAD7;
+$billGreenColor: #B3CD82;
+$billWindowBlueColor: #ABC4D0;
+$billWindowBrownColor: #C7C3BF;
+
+// car
+$carWindowColor: #ABD0CE;
+$carTireColor: #333;
+$carNumberPlateColor: #FFF;
+$carRedColor: #FF602E;
+$carBlueColor: #2E58FF;
+
+//pending
 $skyColor: #BEE1E5;
 $cloudColor: #FFF;
-$grassColor: #8CB836;
-
-
